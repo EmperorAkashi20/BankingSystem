@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import postLogin.PostLoginPage;
+
 import javax.swing.JMenuBar;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -88,6 +91,8 @@ public class LoginScreen extends JFrame {
 		JButton loginBtn = new JButton("Login");
 		loginBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				PostLoginPage postLogin = new PostLoginPage();
+				postLogin.setVisible(true);
 			}
 		});
 		loginBtn.setBounds(657, 495, 117, 29);
