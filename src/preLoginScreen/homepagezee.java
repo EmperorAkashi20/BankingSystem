@@ -72,7 +72,7 @@ public class homepagezee extends JFrame {
 		});
 		
 		JLabel lblNewLabel_2_1_2 = new JLabel("");
-		lblNewLabel_2_1_2.setIcon(new ImageIcon("C:\\Users\\Administrator\\Desktop\\BankingSystem\\images\\pnghut_brand-web-crawler-logo-service-purple-compare-icon.png"));
+		lblNewLabel_2_1_2.setIcon(new ImageIcon(homepagezee.class.getResource("/images/pnghut_brand-web-crawler-logo-service-purple-compare-icon.png")));
 		lblNewLabel_2_1_2.setBounds(606, 368, 121, 105);
 		contentPane.add(lblNewLabel_2_1_2);
 		
@@ -105,17 +105,17 @@ public class homepagezee extends JFrame {
 		contentPane.add(lblNewLabel_5);
 		
 		JLabel lblNewLabel_2_1_1 = new JLabel("");
-		lblNewLabel_2_1_1.setIcon(new ImageIcon("C:\\Users\\Administrator\\Desktop\\BankingSystem\\images\\u.png"));
+		lblNewLabel_2_1_1.setIcon(new ImageIcon(homepagezee.class.getResource("/images/u.png")));
 		lblNewLabel_2_1_1.setBounds(884, 368, 117, 105);
 		contentPane.add(lblNewLabel_2_1_1);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("");
-		lblNewLabel_2_1.setIcon(new ImageIcon("C:\\Users\\Administrator\\Desktop\\BankingSystem\\images\\UPL.png"));
+		lblNewLabel_2_1.setIcon(new ImageIcon(homepagezee.class.getResource("/images/UPL.png")));
 		lblNewLabel_2_1.setBounds(340, 368, 117, 105);
 		contentPane.add(lblNewLabel_2_1);
 		
 		JButton btnNewButton_3 = new JButton("Switch Account");
-		btnNewButton_3.setBounds(96, 526, 121, 31);
+		btnNewButton_3.setBounds(88, 526, 129, 31);
 		contentPane.add(btnNewButton_3);
 		
 		txtMobileNumber = new JTextField();
@@ -165,13 +165,13 @@ public class homepagezee extends JFrame {
 		contentPane.add(txtUsername);
 		
 		JLabel lblNewLabel_4 = new JLabel("");
-		lblNewLabel_4.setIcon(new ImageIcon("C:\\Users\\Administrator\\Desktop\\BankingSystem\\images\\t.png"));
+		lblNewLabel_4.setIcon(new ImageIcon(homepagezee.class.getResource("/images/t.png")));
 		lblNewLabel_4.setBounds(890, 125, 129, 105);
 		contentPane.add(lblNewLabel_4);
 		
 		JButton btnNewButton_2_5 = new JButton("SETTINGS");
 		btnNewButton_2_5.setForeground(Color.WHITE);
-		btnNewButton_2_5.setFont(new Font("Segoe Print", Font.BOLD, 10));
+		btnNewButton_2_5.setFont(new Font("Arial", Font.BOLD, 10));
 		btnNewButton_2_5.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnNewButton_2_5.setBackground(new Color(0, 102, 255));
 		btnNewButton_2_5.setBounds(890, 484, 121, 27);
@@ -179,7 +179,7 @@ public class homepagezee extends JFrame {
 		
 		JButton btnNewButton_2_4 = new JButton("OTHER SERVICES");
 		btnNewButton_2_4.setForeground(Color.WHITE);
-		btnNewButton_2_4.setFont(new Font("Segoe Print", Font.BOLD, 10));
+		btnNewButton_2_4.setFont(new Font("Arial", Font.BOLD, 10));
 		btnNewButton_2_4.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnNewButton_2_4.setBackground(new Color(0, 102, 255));
 		btnNewButton_2_4.setBounds(606, 484, 121, 27);
@@ -187,7 +187,7 @@ public class homepagezee extends JFrame {
 		
 		JButton btnNewButton_2_3 = new JButton("CHECK BALANCE");
 		btnNewButton_2_3.setForeground(Color.WHITE);
-		btnNewButton_2_3.setFont(new Font("Segoe Print", Font.BOLD, 10));
+		btnNewButton_2_3.setFont(new Font("Arial", Font.BOLD, 10));
 		btnNewButton_2_3.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnNewButton_2_3.setBackground(new Color(0, 102, 255));
 		btnNewButton_2_3.setBounds(340, 484, 121, 27);
@@ -195,7 +195,7 @@ public class homepagezee extends JFrame {
 		
 		JButton btnNewButton_2_2 = new JButton("TRANSACTION \r\nHISTORY");
 		btnNewButton_2_2.setForeground(Color.WHITE);
-		btnNewButton_2_2.setFont(new Font("Segoe Print", Font.BOLD, 10));
+		btnNewButton_2_2.setFont(new Font("Arial", Font.BOLD, 10));
 		btnNewButton_2_2.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnNewButton_2_2.setBackground(new Color(0, 102, 255));
 		btnNewButton_2_2.setBounds(871, 241, 162, 27);
@@ -209,29 +209,33 @@ public class homepagezee extends JFrame {
 		
 		JButton btnNewButton_2_1 = new JButton("WITHDRAW");
 		btnNewButton_2_1.setForeground(Color.WHITE);
-		btnNewButton_2_1.setFont(new Font("Segoe Print", Font.BOLD, 10));
+		btnNewButton_2_1.setFont(new Font("Ariel", Font.BOLD, 10));
 		btnNewButton_2_1.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnNewButton_2_1.setBackground(new Color(0, 102, 255));
 		btnNewButton_2_1.setBounds(606, 241, 121, 27);
 		contentPane.add(btnNewButton_2_1);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\Administrator\\Desktop\\BankingSystem\\images\\wit.png"));
+		lblNewLabel_1.setIcon(new ImageIcon(homepagezee.class.getResource("/images/wit.png")));
 		lblNewLabel_1.setBounds(606, 115, 121, 115);
 		contentPane.add(lblNewLabel_1);
 		
 		JButton btnNewButton_2 = new JButton("DEPOSIT");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnNewButton_2.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnNewButton_2.setForeground(new Color(255, 255, 255));
 		btnNewButton_2.setBackground(new Color(0, 102, 255));
-		btnNewButton_2.setFont(new Font("Segoe Print", Font.BOLD, 10));
+		btnNewButton_2.setFont(new Font("Ariel", Font.BOLD, 10));
 		btnNewButton_2.setBounds(340, 241, 121, 27);
 		contentPane.add(btnNewButton_2);
 		btnNewButton.setBounds(1015, 31, 54, 19);
 		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Administrator\\Desktop\\BankingSystem\\images\\small logo2.png"));
+		lblNewLabel.setIcon(new ImageIcon(homepagezee.class.getResource("/images/small logo2.png")));
 		lblNewLabel.setBounds(10, 0, 121, 47);
 		contentPane.add(lblNewLabel);
 		
@@ -278,7 +282,7 @@ public class homepagezee extends JFrame {
 		contentPane.add(panel_3_5);
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\Administrator\\Desktop\\BankingSystem\\images\\deposit (1).png"));
+		lblNewLabel_2.setIcon(new ImageIcon(homepagezee.class.getResource("/images/deposit (1).png")));
 		lblNewLabel_2.setBounds(340, 125, 121, 105);
 		contentPane.add(lblNewLabel_2);
 		
@@ -295,8 +299,8 @@ public class homepagezee extends JFrame {
 		contentPane.add(panel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("New label");
-		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\Administrator\\Desktop\\BankingSystem\\images\\3967030.jpg"));
-		lblNewLabel_3.setBounds(0, 11, 1079, 557);
+		lblNewLabel_3.setIcon(new ImageIcon(homepagezee.class.getResource("/images/3967030.jpg")));
+		lblNewLabel_3.setBounds(0, 0, 1079, 568);
 		contentPane.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("");

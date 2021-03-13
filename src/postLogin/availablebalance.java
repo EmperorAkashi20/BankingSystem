@@ -210,7 +210,7 @@ public class availablebalance extends JFrame {
 		button_2.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		
 		JLabel logo = new JLabel("");
-		logo.setIcon(new ImageIcon("C:\\Users\\Administrator\\Desktop\\BankingSystem\\images\\small logo2.png"));
+		logo.setIcon(new ImageIcon(availablebalance.class.getResource("/images/small logo2.png")));
 		logo.setBounds(10, 0, 121, 47);
 		contentPane.add(logo);
 		
@@ -228,7 +228,7 @@ public class availablebalance extends JFrame {
 		
 		labell_2 = new JLabel("");
 		labell_2.setBounds(227, 87, 852,481);
-		labell_2.setIcon(new ImageIcon("C:\\Users\\Administrator\\Desktop\\BankingSystem\\images\\3967030.jpg"));
+		labell_2.setIcon(new ImageIcon(availablebalance.class.getResource("/images/3967030.jpg")));
 		contentPane.add(labell_2);
 	}
 }

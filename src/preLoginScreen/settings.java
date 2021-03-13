@@ -65,7 +65,7 @@ public class settings extends JFrame {
 		lblNewLabel_5_1_2.setOpaque(true);
 		lblNewLabel_5_1_2.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		lblNewLabel_5_1_2.setBackground(Color.WHITE);
-		lblNewLabel_5_1_2.setBounds(10, 441, 210, 31);
+		lblNewLabel_5_1_2.setBounds(10, 434, 210, 31);
 		contentPane.add(lblNewLabel_5_1_2);
 		
 		JLabel lblNewLabel_5 = new JLabel("work.zeenat@gmail.com");
@@ -106,7 +106,7 @@ public class settings extends JFrame {
 		textField.setColumns(10);
 		textField.setBorder(null);
 		textField.setBackground(new Color(0, 0, 128));
-		textField.setBounds(10, 399, 210, 31);
+		textField.setBounds(10, 391, 210, 31);
 		contentPane.add(textField);
 		
 		textField_2 = new JTextField();
@@ -145,7 +145,7 @@ public class settings extends JFrame {
 		contentPane.add(btnNewButton_1);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Administrator\\Desktop\\BankingSystem\\images\\small logo2.png"));
+		lblNewLabel.setIcon(new ImageIcon(settings.class.getResource("/images/small logo2.png")));
 		lblNewLabel.setBounds(10, 0, 107, 53);
 		contentPane.add(lblNewLabel);
 		
@@ -267,7 +267,7 @@ public class settings extends JFrame {
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("New label");
-		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\Administrator\\Desktop\\BankingSystem\\images\\3967030.jpg"));
+		lblNewLabel_3.setIcon(new ImageIcon(settings.class.getResource("/images/3967030.jpg")));
 		lblNewLabel_3.setBounds(0, -32, 1079, 600);
 		contentPane.add(lblNewLabel_3);
 	}

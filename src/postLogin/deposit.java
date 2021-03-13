@@ -241,7 +241,7 @@ public class deposit extends JFrame {
 		
 		JLabel logo = new JLabel("");
 		logo.setBounds(10, 0, 121, 47);
-		logo.setIcon(new ImageIcon("C:\\Users\\Administrator\\Desktop\\BankingSystem\\images\\small logo2.png"));
+		logo.setIcon(new ImageIcon(deposit.class.getResource("/images/small logo2.png")));
 		contentPane.add(logo);
 		
 		JPanel panel_1 = new JPanel();
@@ -259,7 +259,7 @@ public class deposit extends JFrame {
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setOpaque(true);
 		lblNewLabel.setBackground(new Color(0, 102, 51));
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Administrator\\Desktop\\BankingSystem\\images\\3967030.jpg"));
+		lblNewLabel.setIcon(new ImageIcon(deposit.class.getResource("/images/3967030.jpg")));
 		lblNewLabel.setBounds(0, 0, 1079, 568);
 		contentPane.add(lblNewLabel);
 	}
