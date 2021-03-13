@@ -133,7 +133,7 @@ public class settings extends JFrame {
 		btnNewButton.setForeground(Color.WHITE);
 		btnNewButton.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnNewButton.setBackground(new Color(0, 0, 128));
-		btnNewButton.setBounds(1015, 27, 54, 19);
+		btnNewButton.setBounds(1015, 31, 54, 19);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Welcome, Zeenat Taj Siddique");
@@ -245,6 +245,10 @@ public class settings extends JFrame {
 		lblNewLabel_1.setBackground(new Color(0, 0, 128));
 		
 		JButton btnNewButton_5 = new JButton("DASHBOARD");
+		btnNewButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnNewButton_5.setBackground(new Color(30, 144, 255));
 		btnNewButton_5.setFont(new Font("Arial", Font.PLAIN, 9));
 		btnNewButton_5.setBorder(null);
@@ -255,7 +259,7 @@ public class settings extends JFrame {
 		btnNewButton_5_1.setFont(new Font("Arial", Font.PLAIN, 9));
 		btnNewButton_5_1.setBorder(null);
 		btnNewButton_5_1.setBackground(new Color(30, 144, 255));
-		btnNewButton_5_1.setBounds(318, 99, 65, 23);
+		btnNewButton_5_1.setBounds(320, 99, 65, 23);
 		contentPane.add(btnNewButton_5_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("<");
