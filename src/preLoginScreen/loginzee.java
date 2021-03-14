@@ -18,6 +18,10 @@ import javax.swing.JPasswordField;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -29,6 +33,7 @@ public class loginzee extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JPasswordField passwordField;
+	
 
 	/**
 	 * Launch the application.
@@ -45,7 +50,43 @@ public class loginzee extends JFrame {
 			}
 		});
 	}
-
+	
+	public static String user;
+	public static String pswd;
+	public static String name;
+	public static String email;
+	public static String phone;
+	public static String account;
+	public static String encryptedpswd;
+	
+	public static byte[] getSHA(String input) throws NoSuchAlgorithmException 
+    {  
+        // Static getInstance method is called with hashing SHA  
+        MessageDigest md = MessageDigest.getInstance("SHA-256");  
+  
+        // digest() method called  
+        // to calculate message digest of an input  
+        // and return array of byte 
+        return md.digest(input.getBytes(StandardCharsets.UTF_8));  
+    } 
+    
+    public static String toHexString(byte[] hash) 
+    { 
+        // Convert byte array into signum representation  
+        BigInteger number = new BigInteger(1, hash);  
+  
+        // Convert message digest into hex value  
+        StringBuilder hexString = new StringBuilder(number.toString(16));  
+  
+        // Pad with leading zeros 
+        while (hexString.length() < 32)  
+        {  
+            hexString.insert(0, '0');  
+        }  
+  
+        return hexString.toString();  
+    } 
+	
 	/**
 	 * Create the frame.
 	 */
@@ -97,19 +138,39 @@ public class loginzee extends JFrame {
 		JButton buuuuttttt = new JButton("LOGIN");
 		buuuuttttt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String user = textField.getText();
-				String pswd = passwordField.getText().toString();
-				if(user != null && pswd != null) {
+				account = textField.getText();
+				pswd = passwordField.getText().toString();
+				try {
+					encryptedpswd = toHexString(getSHA(pswd));
+					
+				} catch (NoSuchAlgorithmException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				if(account != null && pswd != null) {
 					try {
 						Connection con = null;
 						con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/UserDetails", "root", "\"NewPassword@2018\"");
 						if(con!=null) {
 							System.out.println("Connected");
-							PreparedStatement st = con.prepareStatement("Select email, password from accountHolder where email=? and password=?");
-							System.out.println(st);
-							st.setString(1, user);
-							st.setString(2, pswd);
+							PreparedStatement st = con.prepareStatement("Select accountnumber, password from accountHolder where accountnumber=? and password=?");
+							st.setString(1, account);
+							st.setString(2, encryptedpswd);
 							 ResultSet rs = st.executeQuery();
+							PreparedStatement rst = con.prepareStatement("SELECT * FROM accountHolder Where accountnumber=?");		
+							rst.setString(1, account);
+							System.out.println(rst);
+							    ResultSet rst1 = rst.executeQuery();
+							    while(rst1.next()) {
+							    	String data1 = rst1.getString(1);
+							    	String data2 = rst1.getString(2);
+							    	String data3 = rst1.getString(3);
+							    	String data4 = rst1.getString(4);
+							    	name = data2;
+							    	account = data1;
+							    	phone = data3;
+							    	email = data4;
+							    }
 							if(rs.next()) {
 								dispose();
 								homepagezee homePage = new homepagezee();
@@ -120,6 +181,7 @@ public class loginzee extends JFrame {
 								JFrame f=new JFrame();  
 							    JOptionPane.showMessageDialog(f,"Entered email or password is incorrect"); 
 							}
+							System.out.println(user);
 						}
 					} catch(Exception loginException) {
 						System.out.println(loginException);
@@ -138,8 +200,8 @@ public class loginzee extends JFrame {
 		lblNewLabel_1_1_1.setBounds(74, 246, 111, 28);
 		contentPane.add(lblNewLabel_1_1_1);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("EMAIL");
-		lblNewLabel_1_1.setBounds(74, 155, 111, 28);
+		JLabel lblNewLabel_1_1 = new JLabel("ACCOUNT NUMBER");
+		lblNewLabel_1_1.setBounds(74, 155, 170, 28);
 		contentPane.add(lblNewLabel_1_1);
 		
 		textField = new JTextField();

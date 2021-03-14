@@ -7,10 +7,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Color;
 import javax.swing.border.SoftBevelBorder;
+
+import preLoginScreen.loginzee;
+
 import javax.swing.border.BevelBorder;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
@@ -44,6 +48,11 @@ public class deposit extends JFrame {
 			}
 		});
 	}
+	
+	String nameField=loginzee.name;
+	String emailField=loginzee.email;
+	String phoneField=loginzee.phone;
+	String accountField=loginzee.account;
 
 	/**
 	 * Create the frame.
@@ -57,7 +66,7 @@ public class deposit extends JFrame {
 		
 		
 		
-		JLabel lblWorkzeenatgmailcom = new JLabel("work.zeenat@gmail.com");
+		JLabel lblWorkzeenatgmailcom = new JLabel(nameField);
 		lblWorkzeenatgmailcom.setBackground(new Color(255, 255, 255));
 		lblWorkzeenatgmailcom.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		lblWorkzeenatgmailcom.setBounds(10,335,207,31);
@@ -73,12 +82,12 @@ public class deposit extends JFrame {
 		btnNewButton_3.setBounds(96, 526, 121, 31);
 		contentPane.add(btnNewButton_3);
 		
-		JLabel lblNewLabel_5_1_2 = new JLabel("09330946879");
-		lblNewLabel_5_1_2.setOpaque(true);
-		lblNewLabel_5_1_2.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		lblNewLabel_5_1_2.setBackground(Color.WHITE);
-		lblNewLabel_5_1_2.setBounds(10, 441, 207, 31);
-		contentPane.add(lblNewLabel_5_1_2);
+		JLabel mobfi = new JLabel(phoneField);
+		mobfi.setOpaque(true);
+		mobfi.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		mobfi.setBackground(Color.WHITE);
+		mobfi.setBounds(10, 441, 207, 31);
+		contentPane.add(mobfi);
 		
 		textField = new JTextField();
 		textField.setText("Mobile Number");
@@ -100,6 +109,10 @@ public class deposit extends JFrame {
 		contentPane.add(btnNewButton_5_1);
 		
 		JButton btnNewButton_5 = new JButton("DASHBOARD");
+		btnNewButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnNewButton_5.setFont(new Font("Arial", Font.PLAIN, 9));
 		btnNewButton_5.setBorder(null);
 		btnNewButton_5.setBackground(new Color(30, 144, 255));
@@ -141,6 +154,13 @@ public class deposit extends JFrame {
 		panel_3.add(btnNewButton_4);
 		
 		JButton btnDone = new JButton("DEPOSIT");
+		btnDone.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				System.out.println(nameField);
+				
+			}
+		});
 		btnDone.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnDone.setBackground(new Color(0, 0, 128));
 		btnDone.setForeground(new Color(255, 255, 255));
@@ -169,6 +189,13 @@ public class deposit extends JFrame {
 		txt.setColumns(10);
 		
 		JRadioButton radio1 = new JRadioButton("Credit / Debit Card    ");
+		radio1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFrame f=new JFrame();  
+			    JOptionPane.showMessageDialog(f,"Card Deposit"); 
+			    radio1.setSelected(false);
+			}
+		});
 		radio1.setBounds(160, 159, 239, 38);
 		panel_3.add(radio1);
 		radio1.setOpaque(false);
@@ -176,6 +203,13 @@ public class deposit extends JFrame {
 		radio1.setFont(new Font("Arial", Font.BOLD, 18));
 		
 		JRadioButton radio2 = new JRadioButton("UPI");
+		radio2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFrame f=new JFrame();  
+			    JOptionPane.showMessageDialog(f,"UPI Deposit"); 
+			    radio2.setSelected(false);
+			}
+		});
 		radio2.setBounds(401, 159, 197, 38);
 		panel_3.add(radio2);
 		radio2.setOpaque(false);
@@ -193,31 +227,31 @@ public class deposit extends JFrame {
 		contentPane.add(text_2);
 		text_2.setColumns(10);
 		
-		JLabel Label_3 = new JLabel("89283983748925656784");
-		Label_3.setBounds(10, 236, 207, 32);
-		Label_3.setOpaque(true);
-		Label_3.setForeground(new Color(0, 0, 0));
-		Label_3.setBackground(Color.WHITE);
-		Label_3.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		contentPane.add(Label_3);
+		JLabel accountnum = new JLabel(accountField);
+		accountnum.setBounds(10, 236, 207, 32);
+		accountnum.setOpaque(true);
+		accountnum.setForeground(new Color(0, 0, 0));
+		accountnum.setBackground(Color.WHITE);
+		accountnum.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		contentPane.add(accountnum);
 		
-		JLabel label_2 = new JLabel("Zeenat_Siddique");
-		label_2.setBounds(10, 145, 207, 31);
-		label_2.setOpaque(true);
-		label_2.setForeground(new Color(0, 0, 0));
-		label_2.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		label_2.setBackground(new Color(255, 255, 255));
-		contentPane.add(label_2);
+		JLabel name = new JLabel(nameField);
+		name.setBounds(10, 145, 207, 31);
+		name.setOpaque(true);
+		name.setForeground(new Color(0, 0, 0));
+		name.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		name.setBackground(new Color(255, 255, 255));
+		contentPane.add(name);
 		
-		JLabel label_1 = new JLabel("work.zeenat@gmail.com");
-		label_1.setBounds(10, 335, 207, 31);
-		label_1.setOpaque(true);
-		label_1.setForeground(Color.BLACK);
-		label_1.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		label_1.setBackground(new Color(255, 255, 255));
-		contentPane.add(label_1);
+		JLabel emailfi = new JLabel(emailField);
+		emailfi.setBounds(10, 335, 207, 31);
+		emailfi.setOpaque(true);
+		emailfi.setForeground(Color.BLACK);
+		emailfi.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		emailfi.setBackground(new Color(255, 255, 255));
+		contentPane.add(emailfi);
 		
-		JButton button = new JButton("Welcome, Zeenat Taj Siddique");
+		JButton button = new JButton("Welcome, " +nameField);
 		button.setBounds(759, 0, 310, 31);
 		button.setBorder(null);
 		button.setForeground(new Color(0, 0, 128));

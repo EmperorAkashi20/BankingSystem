@@ -13,11 +13,18 @@ import java.awt.Color;
 import javax.swing.border.BevelBorder;
 import javax.swing.JTextField;
 import javax.swing.border.SoftBevelBorder;
+
+import postLogin.deposit;
+
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JPasswordField;
 import java.awt.event.ActionListener;
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -51,6 +58,37 @@ public class createaccountzee extends JFrame {
 		});
 	}
 	
+	public static String encryptedpswd;
+	
+	public static byte[] getSHA(String input) throws NoSuchAlgorithmException 
+    {  
+        // Static getInstance method is called with hashing SHA  
+        MessageDigest md = MessageDigest.getInstance("SHA-256");  
+  
+        // digest() method called  
+        // to calculate message digest of an input  
+        // and return array of byte 
+        return md.digest(input.getBytes(StandardCharsets.UTF_8));  
+    } 
+    
+    public static String toHexString(byte[] hash) 
+    { 
+        // Convert byte array into signum representation  
+        BigInteger number = new BigInteger(1, hash);  
+  
+        // Convert message digest into hex value  
+        StringBuilder hexString = new StringBuilder(number.toString(16));  
+  
+        // Pad with leading zeros 
+        while (hexString.length() < 32)  
+        {  
+            hexString.insert(0, '0');  
+        }  
+  
+        return hexString.toString();  
+    } 
+	
+    
 	
 
 	/**
@@ -100,6 +138,13 @@ public class createaccountzee extends JFrame {
 				String email = textField_2.getText();
 				String pswd = passwordField.getText().toString();
 				String confpswd = passwordField_1.getText().toString();
+					try {
+						encryptedpswd = toHexString(getSHA(pswd));
+					} catch (NoSuchAlgorithmException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				
 				if(name !=null && phone != null && email !=null && pswd !=null && confpswd !=null & pswd.length()>=8) {
 					if(!confpswd .equals(pswd)) {
 						JFrame f=new JFrame();  
@@ -128,9 +173,14 @@ public class createaccountzee extends JFrame {
 								st.setString(2, name);
 								st.setString(3, phone);
 								st.setString(4, email);
-								st.setString(5, pswd);
+								st.setString(5, encryptedpswd);
 								st.execute();
 								System.out.println("INSERTED");
+								loginzee loginScreen = new loginzee();
+								loginScreen.setVisible(true);
+								JFrame f=new JFrame();  
+							    JOptionPane.showMessageDialog(f,"Account creation successful. Please take note of the following: \n 1. Keep your account number: " +accountNumber+ " and password safe \n 2. Deposit a minimum of INR 1000 as soon as possible. \n Please login to continue.");  
+								
 							}
 						} catch (Exception notConnected) {
 							System.out.println(notConnected);

@@ -18,9 +18,16 @@ import javax.swing.JComboBox;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
+
 import java.awt.SystemColor;
 import java.awt.Font;
 import javax.swing.border.SoftBevelBorder;
+
+import postLogin.availablebalance;
+import postLogin.deposit;
+import postLogin.withdraw;
+
 import javax.swing.UIManager;
 import java.awt.Toolkit;
 
@@ -47,7 +54,11 @@ public class homepagezee extends JFrame {
 			}
 		});
 	}
-
+	
+	String nameField=loginzee.name;
+	String emailField=loginzee.email;
+	String phoneField=loginzee.phone;
+	String accountField=loginzee.account;
 	/**
 	 * Create the frame.
 	 */
@@ -68,6 +79,11 @@ public class homepagezee extends JFrame {
 		btnNewButton.setBackground(new Color(0, 0, 128));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				dispose();
+				loginzee loginPage = new loginzee();
+				loginPage.setVisible(true);
+				JFrame f=new JFrame();  
+			    JOptionPane.showMessageDialog(f,"Logged Out Successfully"); 
 			}
 		});
 		
@@ -76,33 +92,33 @@ public class homepagezee extends JFrame {
 		lblNewLabel_2_1_2.setBounds(606, 368, 121, 105);
 		contentPane.add(lblNewLabel_2_1_2);
 		
-		JLabel lblNewLabel_5_1_2 = new JLabel("09330946879");
-		lblNewLabel_5_1_2.setOpaque(true);
-		lblNewLabel_5_1_2.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		lblNewLabel_5_1_2.setBackground(Color.WHITE);
-		lblNewLabel_5_1_2.setBounds(10, 442, 207, 31);
-		contentPane.add(lblNewLabel_5_1_2);
+		JLabel mobfi = new JLabel(phoneField);
+		mobfi.setOpaque(true);
+		mobfi.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		mobfi.setBackground(Color.WHITE);
+		mobfi.setBounds(10, 442, 207, 31);
+		contentPane.add(mobfi);
 		
-		JLabel lblNewLabel_5_1_1 = new JLabel("892839837489253656784");
-		lblNewLabel_5_1_1.setOpaque(true);
-		lblNewLabel_5_1_1.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		lblNewLabel_5_1_1.setBackground(Color.WHITE);
-		lblNewLabel_5_1_1.setBounds(10, 236, 207, 32);
-		contentPane.add(lblNewLabel_5_1_1);
+		JLabel accfi = new JLabel(accountField);
+		accfi.setOpaque(true);
+		accfi.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		accfi.setBackground(Color.WHITE);
+		accfi.setBounds(10, 236, 207, 32);
+		contentPane.add(accfi);
 		
-		JLabel lblNewLabel_5_1 = new JLabel("Zeenat_Siddique");
-		lblNewLabel_5_1.setOpaque(true);
-		lblNewLabel_5_1.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		lblNewLabel_5_1.setBackground(Color.WHITE);
-		lblNewLabel_5_1.setBounds(10, 145, 207, 31);
-		contentPane.add(lblNewLabel_5_1);
+		JLabel namefi = new JLabel(nameField);
+		namefi.setOpaque(true);
+		namefi.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		namefi.setBackground(Color.WHITE);
+		namefi.setBounds(10, 145, 207, 31);
+		contentPane.add(namefi);
 		
-		JLabel lblNewLabel_5 = new JLabel("work.zeenat@gmail.com");
-		lblNewLabel_5.setOpaque(true);
-		lblNewLabel_5.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		lblNewLabel_5.setBackground(new Color(255, 255, 255));
-		lblNewLabel_5.setBounds(10, 335, 207, 31);
-		contentPane.add(lblNewLabel_5);
+		JLabel emailfi = new JLabel(emailField);
+		emailfi.setOpaque(true);
+		emailfi.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		emailfi.setBackground(new Color(255, 255, 255));
+		emailfi.setBounds(10, 335, 207, 31);
+		contentPane.add(emailfi);
 		
 		JLabel lblNewLabel_2_1_1 = new JLabel("");
 		lblNewLabel_2_1_1.setIcon(new ImageIcon(homepagezee.class.getResource("/images/u.png")));
@@ -115,6 +131,15 @@ public class homepagezee extends JFrame {
 		contentPane.add(lblNewLabel_2_1);
 		
 		JButton btnNewButton_3 = new JButton("Switch Account");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				loginzee loginPage = new loginzee();
+				loginPage.setVisible(true);
+				JFrame f=new JFrame();  
+			    JOptionPane.showMessageDialog(f,"Please enter account credentials"); 
+			}
+		});
 		btnNewButton_3.setBounds(88, 526, 129, 31);
 		contentPane.add(btnNewButton_3);
 		
@@ -170,6 +195,10 @@ public class homepagezee extends JFrame {
 		contentPane.add(lblNewLabel_4);
 		
 		JButton btnNewButton_2_5 = new JButton("SETTINGS");
+		btnNewButton_2_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnNewButton_2_5.setForeground(Color.WHITE);
 		btnNewButton_2_5.setFont(new Font("Arial", Font.BOLD, 10));
 		btnNewButton_2_5.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
@@ -178,6 +207,10 @@ public class homepagezee extends JFrame {
 		contentPane.add(btnNewButton_2_5);
 		
 		JButton btnNewButton_2_4 = new JButton("OTHER SERVICES");
+		btnNewButton_2_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnNewButton_2_4.setForeground(Color.WHITE);
 		btnNewButton_2_4.setFont(new Font("Arial", Font.BOLD, 10));
 		btnNewButton_2_4.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
@@ -186,6 +219,13 @@ public class homepagezee extends JFrame {
 		contentPane.add(btnNewButton_2_4);
 		
 		JButton btnNewButton_2_3 = new JButton("CHECK BALANCE");
+		btnNewButton_2_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				availablebalance avlbal = new availablebalance();
+				avlbal.setVisible(true);
+			}
+		});
 		btnNewButton_2_3.setForeground(Color.WHITE);
 		btnNewButton_2_3.setFont(new Font("Arial", Font.BOLD, 10));
 		btnNewButton_2_3.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
@@ -194,6 +234,10 @@ public class homepagezee extends JFrame {
 		contentPane.add(btnNewButton_2_3);
 		
 		JButton btnNewButton_2_2 = new JButton("TRANSACTION \r\nHISTORY");
+		btnNewButton_2_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnNewButton_2_2.setForeground(Color.WHITE);
 		btnNewButton_2_2.setFont(new Font("Arial", Font.BOLD, 10));
 		btnNewButton_2_2.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
@@ -208,6 +252,13 @@ public class homepagezee extends JFrame {
 		contentPane.add(panel_3_2);
 		
 		JButton btnNewButton_2_1 = new JButton("WITHDRAW");
+		btnNewButton_2_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				withdraw withdrawPage = new withdraw();
+				withdrawPage.setVisible(true);
+			}
+		});
 		btnNewButton_2_1.setForeground(Color.WHITE);
 		btnNewButton_2_1.setFont(new Font("Ariel", Font.BOLD, 10));
 		btnNewButton_2_1.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
@@ -223,6 +274,9 @@ public class homepagezee extends JFrame {
 		JButton btnNewButton_2 = new JButton("DEPOSIT");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				dispose();
+				deposit depositPage = new deposit();
+				depositPage.setVisible(true);
 			}
 		});
 		btnNewButton_2.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
@@ -239,17 +293,17 @@ public class homepagezee extends JFrame {
 		lblNewLabel.setBounds(10, 0, 121, 47);
 		contentPane.add(lblNewLabel);
 		
-		JButton btnNewButton_1 = new JButton("Welcome, Zeenat Taj Siddique");
-		btnNewButton_1.setHorizontalAlignment(SwingConstants.RIGHT);
-		btnNewButton_1.setBorder(null);
-		btnNewButton_1.setForeground(new Color(0, 0, 128));
-		btnNewButton_1.setBackground(new Color(255, 255, 255));
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton topbar = new JButton("Welcome, "+nameField);
+		topbar.setHorizontalAlignment(SwingConstants.RIGHT);
+		topbar.setBorder(null);
+		topbar.setForeground(new Color(0, 0, 128));
+		topbar.setBackground(new Color(255, 255, 255));
+		topbar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_1.setBounds(759, 0, 310, 31);
-		contentPane.add(btnNewButton_1);
+		topbar.setBounds(759, 0, 310, 31);
+		contentPane.add(topbar);
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
