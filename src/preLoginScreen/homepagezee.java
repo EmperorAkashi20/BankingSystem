@@ -194,56 +194,59 @@ public class homepagezee extends JFrame {
 		lblNewLabel_4.setBounds(890, 125, 129, 105);
 		contentPane.add(lblNewLabel_4);
 		
-		JButton btnNewButton_2_5 = new JButton("SETTINGS");
-		btnNewButton_2_5.addActionListener(new ActionListener() {
+		JButton settingbtn = new JButton("SETTINGS");
+		settingbtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				settings settingsPage = new settings();
+				settingsPage.setVisible(true);
+			}
+		});
+		settingbtn.setForeground(Color.WHITE);
+		settingbtn.setFont(new Font("Arial", Font.BOLD, 10));
+		settingbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		settingbtn.setBackground(new Color(0, 102, 255));
+		settingbtn.setBounds(890, 484, 121, 27);
+		contentPane.add(settingbtn);
+		
+		JButton otherservicesbtn = new JButton("OTHER SERVICES");
+		otherservicesbtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_2_5.setForeground(Color.WHITE);
-		btnNewButton_2_5.setFont(new Font("Arial", Font.BOLD, 10));
-		btnNewButton_2_5.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnNewButton_2_5.setBackground(new Color(0, 102, 255));
-		btnNewButton_2_5.setBounds(890, 484, 121, 27);
-		contentPane.add(btnNewButton_2_5);
+		otherservicesbtn.setForeground(Color.WHITE);
+		otherservicesbtn.setFont(new Font("Arial", Font.BOLD, 10));
+		otherservicesbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		otherservicesbtn.setBackground(new Color(0, 102, 255));
+		otherservicesbtn.setBounds(606, 484, 121, 27);
+		contentPane.add(otherservicesbtn);
 		
-		JButton btnNewButton_2_4 = new JButton("OTHER SERVICES");
-		btnNewButton_2_4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnNewButton_2_4.setForeground(Color.WHITE);
-		btnNewButton_2_4.setFont(new Font("Arial", Font.BOLD, 10));
-		btnNewButton_2_4.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnNewButton_2_4.setBackground(new Color(0, 102, 255));
-		btnNewButton_2_4.setBounds(606, 484, 121, 27);
-		contentPane.add(btnNewButton_2_4);
-		
-		JButton btnNewButton_2_3 = new JButton("CHECK BALANCE");
-		btnNewButton_2_3.addActionListener(new ActionListener() {
+		JButton checkbalbtn = new JButton("CHECK BALANCE");
+		checkbalbtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				availablebalance avlbal = new availablebalance();
 				avlbal.setVisible(true);
 			}
 		});
-		btnNewButton_2_3.setForeground(Color.WHITE);
-		btnNewButton_2_3.setFont(new Font("Arial", Font.BOLD, 10));
-		btnNewButton_2_3.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnNewButton_2_3.setBackground(new Color(0, 102, 255));
-		btnNewButton_2_3.setBounds(340, 484, 121, 27);
-		contentPane.add(btnNewButton_2_3);
+		checkbalbtn.setForeground(Color.WHITE);
+		checkbalbtn.setFont(new Font("Arial", Font.BOLD, 10));
+		checkbalbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		checkbalbtn.setBackground(new Color(0, 102, 255));
+		checkbalbtn.setBounds(340, 484, 121, 27);
+		contentPane.add(checkbalbtn);
 		
-		JButton btnNewButton_2_2 = new JButton("TRANSACTION \r\nHISTORY");
-		btnNewButton_2_2.addActionListener(new ActionListener() {
+		JButton transactionhistorybtn = new JButton("TRANSACTION \r\nHISTORY");
+		transactionhistorybtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_2_2.setForeground(Color.WHITE);
-		btnNewButton_2_2.setFont(new Font("Arial", Font.BOLD, 10));
-		btnNewButton_2_2.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnNewButton_2_2.setBackground(new Color(0, 102, 255));
-		btnNewButton_2_2.setBounds(871, 241, 162, 27);
-		contentPane.add(btnNewButton_2_2);
+		transactionhistorybtn.setForeground(Color.WHITE);
+		transactionhistorybtn.setFont(new Font("Arial", Font.BOLD, 10));
+		transactionhistorybtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		transactionhistorybtn.setBackground(new Color(0, 102, 255));
+		transactionhistorybtn.setBounds(871, 241, 162, 27);
+		contentPane.add(transactionhistorybtn);
 		
 		JPanel panel_3_2 = new JPanel();
 		panel_3_2.setBackground(new Color(255, 255, 255));
@@ -251,40 +254,40 @@ public class homepagezee extends JFrame {
 		panel_3_2.setBounds(848, 114, 200, 167);
 		contentPane.add(panel_3_2);
 		
-		JButton btnNewButton_2_1 = new JButton("WITHDRAW");
-		btnNewButton_2_1.addActionListener(new ActionListener() {
+		JButton withdrawbtn = new JButton("WITHDRAW");
+		withdrawbtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				withdraw withdrawPage = new withdraw();
 				withdrawPage.setVisible(true);
 			}
 		});
-		btnNewButton_2_1.setForeground(Color.WHITE);
-		btnNewButton_2_1.setFont(new Font("Ariel", Font.BOLD, 10));
-		btnNewButton_2_1.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnNewButton_2_1.setBackground(new Color(0, 102, 255));
-		btnNewButton_2_1.setBounds(606, 241, 121, 27);
-		contentPane.add(btnNewButton_2_1);
+		withdrawbtn.setForeground(Color.WHITE);
+		withdrawbtn.setFont(new Font("Ariel", Font.BOLD, 10));
+		withdrawbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		withdrawbtn.setBackground(new Color(0, 102, 255));
+		withdrawbtn.setBounds(606, 241, 121, 27);
+		contentPane.add(withdrawbtn);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setIcon(new ImageIcon(homepagezee.class.getResource("/images/wit.png")));
 		lblNewLabel_1.setBounds(606, 115, 121, 115);
 		contentPane.add(lblNewLabel_1);
 		
-		JButton btnNewButton_2 = new JButton("DEPOSIT");
-		btnNewButton_2.addActionListener(new ActionListener() {
+		JButton depositbtn = new JButton("DEPOSIT");
+		depositbtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				deposit depositPage = new deposit();
 				depositPage.setVisible(true);
 			}
 		});
-		btnNewButton_2.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnNewButton_2.setForeground(new Color(255, 255, 255));
-		btnNewButton_2.setBackground(new Color(0, 102, 255));
-		btnNewButton_2.setFont(new Font("Ariel", Font.BOLD, 10));
-		btnNewButton_2.setBounds(340, 241, 121, 27);
-		contentPane.add(btnNewButton_2);
+		depositbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		depositbtn.setForeground(new Color(255, 255, 255));
+		depositbtn.setBackground(new Color(0, 102, 255));
+		depositbtn.setFont(new Font("Ariel", Font.BOLD, 10));
+		depositbtn.setBounds(340, 241, 121, 27);
+		contentPane.add(depositbtn);
 		btnNewButton.setBounds(1015, 31, 54, 19);
 		contentPane.add(btnNewButton);
 		

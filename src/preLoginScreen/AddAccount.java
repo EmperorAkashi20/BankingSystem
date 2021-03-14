@@ -17,7 +17,7 @@ import javax.swing.JPasswordField;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.ImageIcon;
 
-public class Jframe extends JFrame {
+public class AddAccount extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -34,7 +34,7 @@ public class Jframe extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Jframe frame = new Jframe();
+					AddAccount frame = new AddAccount();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -46,7 +46,7 @@ public class Jframe extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Jframe() {
+	public AddAccount() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1085, 607);
 		contentPane = new JPanel();
@@ -160,7 +160,7 @@ public class Jframe extends JFrame {
 		contentPane.add(button);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(Jframe.class.getResource("/images/small logo2.png")));
+		lblNewLabel.setIcon(new ImageIcon(AddAccount.class.getResource("/images/small logo2.png")));
 		lblNewLabel.setBounds(10, 11, 147, 40);
 		contentPane.add(lblNewLabel);
 		
@@ -246,7 +246,7 @@ public class Jframe extends JFrame {
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("");
-		lblNewLabel_3.setIcon(new ImageIcon(Jframe.class.getResource("/images/3967030.jpg")));
+		lblNewLabel_3.setIcon(new ImageIcon(AddAccount.class.getResource("/images/3967030.jpg")));
 		lblNewLabel_3.setBounds(0, 0, 1069, 662);
 		contentPane.add(lblNewLabel_3);
 	}

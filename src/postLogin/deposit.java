@@ -13,12 +13,18 @@ import javax.swing.JButton;
 import java.awt.Color;
 import javax.swing.border.SoftBevelBorder;
 
+import preLoginScreen.homepagezee;
 import preLoginScreen.loginzee;
 
 import javax.swing.border.BevelBorder;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.JRadioButton;
@@ -30,7 +36,7 @@ public class deposit extends JFrame {
 	private JTextField text1;
 	private JTextField text;
 	private JTextField txt;
-	private JTextField text2;
+	private JTextField amtfi;
 	private JTextField textField;
 
 	/**
@@ -53,6 +59,12 @@ public class deposit extends JFrame {
 	String emailField=loginzee.email;
 	String phoneField=loginzee.phone;
 	String accountField=loginzee.account;
+	
+	public static String currentamt;
+	public static String depositamt;
+	public static ResultSet rst1;
+	public static long num,num2;
+	public static String finalbalance;
 
 	/**
 	 * Create the frame.
@@ -79,6 +91,15 @@ public class deposit extends JFrame {
 		});
 		
 		JButton btnNewButton_3 = new JButton("Switch Account");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				loginzee loginPage = new loginzee();
+				loginPage.setVisible(true);
+				JFrame f=new JFrame();  
+			    JOptionPane.showMessageDialog(f,"Please enter account credentials"); 
+			}
+		});
 		btnNewButton_3.setBounds(96, 526, 121, 31);
 		contentPane.add(btnNewButton_3);
 		
@@ -111,6 +132,9 @@ public class deposit extends JFrame {
 		JButton btnNewButton_5 = new JButton("DASHBOARD");
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				dispose();
+				homepagezee dashboard = new homepagezee();
+				dashboard.setVisible(true);
 			}
 		});
 		btnNewButton_5.setFont(new Font("Arial", Font.PLAIN, 9));
@@ -156,9 +180,30 @@ public class deposit extends JFrame {
 		JButton btnDone = new JButton("DEPOSIT");
 		btnDone.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				System.out.println(nameField);
-				
+				depositamt = amtfi.getText();
+				num = Long.parseLong(depositamt);
+				Connection con = null;
+				try {
+					con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/UserDetails", "root", "\"NewPassword@2018\"");
+					if(con!=null) {
+						System.out.println("Connected");
+						PreparedStatement rst = con.prepareStatement("select * from accountholder where accountnumber="+accountField);
+						rst1 = rst.executeQuery();
+						while(rst1.next()) {
+							currentamt = rst1.getString(6);
+							System.out.println(currentamt);
+							num2 = Long.parseLong(currentamt);
+							System.out.println(num2);
+						}
+						PreparedStatement st = con.prepareStatement("update accountholder set currentbalance=? where accountnumber="+accountField);
+						finalbalance = String.valueOf(num+num2);
+						st.setString(1, finalbalance);
+						st.execute();
+					}
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		btnDone.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
@@ -173,10 +218,10 @@ public class deposit extends JFrame {
 		panel_3.add(label1);
 		label1.setFont(new Font("Arial", Font.BOLD, 20));
 		
-		text2 = new JTextField();
-		text2.setBounds(275, 48, 213, 31);
-		panel_3.add(text2);
-		text2.setColumns(10);
+		amtfi = new JTextField();
+		amtfi.setBounds(275, 48, 213, 31);
+		panel_3.add(amtfi);
+		amtfi.setColumns(10);
 		
 		txt = new JTextField();
 		txt.setBounds(30, 102, 197, 50);
@@ -267,6 +312,15 @@ public class deposit extends JFrame {
 		contentPane.add(panel_2);
 		
 		JButton button_2 = new JButton("logout");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				loginzee loginScreen = new loginzee();
+				loginScreen.setVisible(true);
+				JFrame f=new JFrame();  
+			    JOptionPane.showMessageDialog(f,"Logged Out Successfully"); 
+			}
+		});
 		button_2.setBounds(1016, 30, 53, 19);
 		contentPane.add(button_2);
 		button_2.setForeground(new Color(255, 255, 255));

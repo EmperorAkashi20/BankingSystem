@@ -166,10 +166,12 @@ public class loginzee extends JFrame {
 							    	String data2 = rst1.getString(2);
 							    	String data3 = rst1.getString(3);
 							    	String data4 = rst1.getString(4);
+							    	String data5 = rst1.getString(5);
 							    	name = data2;
 							    	account = data1;
 							    	phone = data3;
 							    	email = data4;
+							    	pswd = data5;
 							    }
 							if(rs.next()) {
 								dispose();
@@ -181,7 +183,6 @@ public class loginzee extends JFrame {
 								JFrame f=new JFrame();  
 							    JOptionPane.showMessageDialog(f,"Entered email or password is incorrect"); 
 							}
-							System.out.println(user);
 						}
 					} catch(Exception loginException) {
 						System.out.println(loginException);

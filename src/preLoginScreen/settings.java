@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.border.BevelBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
@@ -42,6 +43,11 @@ public class settings extends JFrame {
 			}
 		});
 	}
+	
+	String nameField=loginzee.name;
+	String emailField=loginzee.email;
+	String phoneField=loginzee.phone;
+	String accountField=loginzee.account;
 
 	/**
 	 * Create the frame.
@@ -58,36 +64,45 @@ public class settings extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton_3 = new JButton("Switch Account");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				loginzee loginPage = new loginzee();
+				loginPage.setVisible(true);
+				JFrame f=new JFrame();  
+			    JOptionPane.showMessageDialog(f,"Please enter account credentials"); 
+			}
+		});
 		btnNewButton_3.setBounds(93, 526, 127, 31);
 		contentPane.add(btnNewButton_3);
 		
-		JLabel lblNewLabel_5_1_2 = new JLabel("09330946879");
-		lblNewLabel_5_1_2.setOpaque(true);
-		lblNewLabel_5_1_2.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		lblNewLabel_5_1_2.setBackground(Color.WHITE);
-		lblNewLabel_5_1_2.setBounds(10, 434, 210, 31);
-		contentPane.add(lblNewLabel_5_1_2);
+		JLabel mobfi = new JLabel(phoneField);
+		mobfi.setOpaque(true);
+		mobfi.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		mobfi.setBackground(Color.WHITE);
+		mobfi.setBounds(10, 434, 210, 31);
+		contentPane.add(mobfi);
 		
-		JLabel lblNewLabel_5 = new JLabel("work.zeenat@gmail.com");
-		lblNewLabel_5.setOpaque(true);
-		lblNewLabel_5.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		lblNewLabel_5.setBackground(Color.WHITE);
-		lblNewLabel_5.setBounds(10, 331, 210, 31);
-		contentPane.add(lblNewLabel_5);
+		JLabel emailfi = new JLabel(emailField);
+		emailfi.setOpaque(true);
+		emailfi.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		emailfi.setBackground(Color.WHITE);
+		emailfi.setBounds(10, 331, 210, 31);
+		contentPane.add(emailfi);
 		
-		JLabel lblNewLabel_5_1_1 = new JLabel("892839837489253656784");
-		lblNewLabel_5_1_1.setOpaque(true);
-		lblNewLabel_5_1_1.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		lblNewLabel_5_1_1.setBackground(Color.WHITE);
-		lblNewLabel_5_1_1.setBounds(10, 232, 210, 32);
-		contentPane.add(lblNewLabel_5_1_1);
+		JLabel acntfi = new JLabel(accountField);
+		acntfi.setOpaque(true);
+		acntfi.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		acntfi.setBackground(Color.WHITE);
+		acntfi.setBounds(10, 232, 210, 32);
+		contentPane.add(acntfi);
 		
-		JLabel lblNewLabel_5_1 = new JLabel("Zeenat_Siddique");
-		lblNewLabel_5_1.setOpaque(true);
-		lblNewLabel_5_1.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		lblNewLabel_5_1.setBackground(Color.WHITE);
-		lblNewLabel_5_1.setBounds(10, 141, 210, 31);
-		contentPane.add(lblNewLabel_5_1);
+		JLabel namefi = new JLabel(nameField);
+		namefi.setOpaque(true);
+		namefi.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		namefi.setBackground(Color.WHITE);
+		namefi.setBounds(10, 141, 210, 31);
+		contentPane.add(namefi);
 		
 		textField_1 = new JTextField();
 		textField_1.setText("Email Address");
@@ -129,20 +144,29 @@ public class settings extends JFrame {
 		textField_3.setBounds(10, 99, 210, 31);
 		contentPane.add(textField_3);
 		
-		JButton btnNewButton = new JButton("logout");
-		btnNewButton.setForeground(Color.WHITE);
-		btnNewButton.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnNewButton.setBackground(new Color(0, 0, 128));
-		btnNewButton.setBounds(1015, 31, 54, 19);
-		contentPane.add(btnNewButton);
+		JButton logoutbtn = new JButton("logout");
+		logoutbtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				loginzee loginPage = new loginzee();
+				loginPage.setVisible(true);
+				JFrame f=new JFrame();  
+			    JOptionPane.showMessageDialog(f,"Logged Out Successfully");
+			}
+		});
+		logoutbtn.setForeground(Color.WHITE);
+		logoutbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		logoutbtn.setBackground(new Color(0, 0, 128));
+		logoutbtn.setBounds(1015, 31, 54, 19);
+		contentPane.add(logoutbtn);
 		
-		JButton btnNewButton_1 = new JButton("Welcome, Zeenat Taj Siddique");
-		btnNewButton_1.setHorizontalAlignment(SwingConstants.RIGHT);
-		btnNewButton_1.setForeground(new Color(0, 0, 128));
-		btnNewButton_1.setBorder(null);
-		btnNewButton_1.setBackground(Color.WHITE);
-		btnNewButton_1.setBounds(759, 0, 310, 31);
-		contentPane.add(btnNewButton_1);
+		JButton topbar = new JButton("Welcome, "+nameField);
+		topbar.setHorizontalAlignment(SwingConstants.RIGHT);
+		topbar.setForeground(new Color(0, 0, 128));
+		topbar.setBorder(null);
+		topbar.setBackground(Color.WHITE);
+		topbar.setBounds(759, 0, 310, 31);
+		contentPane.add(topbar);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(settings.class.getResource("/images/small logo2.png")));
@@ -174,40 +198,53 @@ public class settings extends JFrame {
 		contentPane.add(panel_3);
 		panel_3.setLayout(null);
 		
-		JButton btnNewButton_2_1_1 = new JButton("CHANGE PHONE NUMBER");
-		btnNewButton_2_1_1.addActionListener(new ActionListener() {
+		JButton changephonebtn = new JButton("CHANGE PHONE NUMBER");
+		changephonebtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				dispose();
+				ChangePhoneNumber changenumber = new ChangePhoneNumber();
+				changenumber.setVisible(true);
 			}
 		});
-		btnNewButton_2_1_1.setVerticalTextPosition(SwingConstants.BOTTOM);
-		btnNewButton_2_1_1.setForeground(Color.BLACK);
-		btnNewButton_2_1_1.setFont(new Font("Arial", Font.BOLD, 10));
-		btnNewButton_2_1_1.setBorder(null);
-		btnNewButton_2_1_1.setBackground(Color.WHITE);
-		btnNewButton_2_1_1.setBounds(24, 241, 205, 19);
-		panel_3.add(btnNewButton_2_1_1);
+		changephonebtn.setVerticalTextPosition(SwingConstants.BOTTOM);
+		changephonebtn.setForeground(Color.BLACK);
+		changephonebtn.setFont(new Font("Arial", Font.BOLD, 10));
+		changephonebtn.setBorder(null);
+		changephonebtn.setBackground(Color.WHITE);
+		changephonebtn.setBounds(24, 241, 205, 19);
+		panel_3.add(changephonebtn);
 		
-		JButton btnNewButton_2_1 = new JButton("ADD ACCOUNT");
-		btnNewButton_2_1.addActionListener(new ActionListener() {
+		JButton addacntbtn = new JButton("ADD ACCOUNT");
+		addacntbtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				dispose();
+				AddAccount addaccount = new AddAccount();
+				addaccount.setVisible(true);
 			}
 		});
-		btnNewButton_2_1.setVerticalTextPosition(SwingConstants.BOTTOM);
-		btnNewButton_2_1.setForeground(Color.BLACK);
-		btnNewButton_2_1.setFont(new Font("Arial", Font.BOLD, 10));
-		btnNewButton_2_1.setBorder(null);
-		btnNewButton_2_1.setBackground(Color.WHITE);
-		btnNewButton_2_1.setBounds(24, 169, 205, 19);
-		panel_3.add(btnNewButton_2_1);
+		addacntbtn.setVerticalTextPosition(SwingConstants.BOTTOM);
+		addacntbtn.setForeground(Color.BLACK);
+		addacntbtn.setFont(new Font("Arial", Font.BOLD, 10));
+		addacntbtn.setBorder(null);
+		addacntbtn.setBackground(Color.WHITE);
+		addacntbtn.setBounds(24, 169, 205, 19);
+		panel_3.add(addacntbtn);
 		
-		JButton btnNewButton_2 = new JButton("CHANGE PASSWORD");
-		btnNewButton_2.setVerticalTextPosition(SwingConstants.BOTTOM);
-		btnNewButton_2.setForeground(new Color(0, 0, 0));
-		btnNewButton_2.setFont(new Font("Arial", Font.BOLD, 10));
-		btnNewButton_2.setBorder(null);
-		btnNewButton_2.setBackground(new Color(255, 255, 255));
-		btnNewButton_2.setBounds(24, 96, 205, 24);
-		panel_3.add(btnNewButton_2);
+		JButton changepswdbtn = new JButton("CHANGE PASSWORD");
+		changepswdbtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				Changepassword changepswd = new Changepassword();
+				changepswd.setVisible(true);
+			}
+		});
+		changepswdbtn.setVerticalTextPosition(SwingConstants.BOTTOM);
+		changepswdbtn.setForeground(new Color(0, 0, 0));
+		changepswdbtn.setFont(new Font("Arial", Font.BOLD, 10));
+		changepswdbtn.setBorder(null);
+		changepswdbtn.setBackground(new Color(255, 255, 255));
+		changepswdbtn.setBounds(24, 96, 205, 24);
+		panel_3.add(changepswdbtn);
 		
 		JPanel panel_4 = new JPanel();
 		panel_4.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
@@ -227,12 +264,12 @@ public class settings extends JFrame {
 		panel_4_2.setBounds(24, 233, 467, 43);
 		panel_3.add(panel_4_2);
 		
-		JButton btnNewButton_4 = new JButton("back");
-		btnNewButton_4.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnNewButton_4.setBackground(new Color(0, 0, 128));
-		btnNewButton_4.setForeground(new Color(255, 255, 255));
-		btnNewButton_4.setBounds(611, 280, 104, 33);
-		panel_3.add(btnNewButton_4);
+		JButton backbtn = new JButton("back");
+		backbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		backbtn.setBackground(new Color(0, 0, 128));
+		backbtn.setForeground(new Color(255, 255, 255));
+		backbtn.setBounds(611, 280, 104, 33);
+		panel_3.add(backbtn);
 		
 		JLabel lblNewLabel_1 = new JLabel("SETTINGS");
 		lblNewLabel_1.setBounds(253, 22, 198, 31);
@@ -244,16 +281,19 @@ public class settings extends JFrame {
 		lblNewLabel_1.setOpaque(true);
 		lblNewLabel_1.setBackground(new Color(0, 0, 128));
 		
-		JButton btnNewButton_5 = new JButton("DASHBOARD");
-		btnNewButton_5.addActionListener(new ActionListener() {
+		JButton dashboardbtn = new JButton("DASHBOARD");
+		dashboardbtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				dispose();
+				homepagezee dashboard = new homepagezee();
+				dashboard.setVisible(true);
 			}
 		});
-		btnNewButton_5.setBackground(new Color(30, 144, 255));
-		btnNewButton_5.setFont(new Font("Arial", Font.PLAIN, 9));
-		btnNewButton_5.setBorder(null);
-		btnNewButton_5.setBounds(243, 99, 65, 23);
-		contentPane.add(btnNewButton_5);
+		dashboardbtn.setBackground(new Color(30, 144, 255));
+		dashboardbtn.setFont(new Font("Arial", Font.PLAIN, 9));
+		dashboardbtn.setBorder(null);
+		dashboardbtn.setBounds(243, 99, 65, 23);
+		contentPane.add(dashboardbtn);
 		
 		JButton btnNewButton_5_1 = new JButton("SETTINGS");
 		btnNewButton_5_1.setFont(new Font("Arial", Font.PLAIN, 9));

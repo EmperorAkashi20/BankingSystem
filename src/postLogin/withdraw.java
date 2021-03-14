@@ -7,14 +7,24 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Color;
 import javax.swing.border.SoftBevelBorder;
+
+import preLoginScreen.homepagezee;
+import preLoginScreen.loginzee;
+
 import javax.swing.border.BevelBorder;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 
@@ -25,7 +35,7 @@ public class withdraw extends JFrame {
 	private JTextField text_2;
 	private JTextField text1;
 	private JTextField text;
-	private JTextField textField;
+	private JTextField withdrawfi;
 	private JTextField textField_1;
 
 	/**
@@ -43,6 +53,17 @@ public class withdraw extends JFrame {
 			}
 		});
 	}
+	
+	String nameField=loginzee.name;
+	String emailField=loginzee.email;
+	String phoneField=loginzee.phone;
+	String accountField=loginzee.account;
+	
+	public static String currentamt;
+	public static String withdrawamtfi;
+	public static ResultSet rst1;
+	public static long num,num2;
+	public static String finalbalance;
 
 	/**
 	 * Create the frame.
@@ -60,12 +81,12 @@ public class withdraw extends JFrame {
 		lblWorkzeenatgmailcom.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		lblWorkzeenatgmailcom.setBounds(10,335,207,31);
 		
-		JLabel lblNewLabel_5_1_2 = new JLabel("09330946879");
-		lblNewLabel_5_1_2.setOpaque(true);
-		lblNewLabel_5_1_2.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		lblNewLabel_5_1_2.setBackground(Color.WHITE);
-		lblNewLabel_5_1_2.setBounds(10, 432, 207, 31);
-		contentPane.add(lblNewLabel_5_1_2);
+		JLabel mobfi = new JLabel(phoneField);
+		mobfi.setOpaque(true);
+		mobfi.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		mobfi.setBackground(Color.WHITE);
+		mobfi.setBounds(10, 432, 207, 31);
+		contentPane.add(mobfi);
 		
 		textField_1 = new JTextField();
 		textField_1.setText("Mobile Number");
@@ -77,9 +98,18 @@ public class withdraw extends JFrame {
 		textField_1.setBounds(10, 390, 207, 31);
 		contentPane.add(textField_1);
 		
-		JButton btnNewButton_3 = new JButton("Switch Account");
-		btnNewButton_3.setBounds(96, 526, 121, 31);
-		contentPane.add(btnNewButton_3);
+		JButton switchacntbtn = new JButton("Switch Account");
+		switchacntbtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				loginzee loginPage = new loginzee();
+				loginPage.setVisible(true);
+				JFrame f=new JFrame();  
+			    JOptionPane.showMessageDialog(f,"Please enter account credentials"); 
+			}
+		});
+		switchacntbtn.setBounds(96, 526, 121, 31);
+		contentPane.add(switchacntbtn);
 		
 		JLabel lblNewLabel_2 = new JLabel("<");
 		lblNewLabel_2.setBounds(308, 103, 16, 19);
@@ -93,6 +123,13 @@ public class withdraw extends JFrame {
 		contentPane.add(btnNewButton_5_1);
 		
 		JButton btnNewButton_5 = new JButton("DASHBOARD");
+		btnNewButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				homepagezee dashboard = new homepagezee();
+				dashboard.setVisible(true);
+			}
+		});
 		btnNewButton_5.setFont(new Font("Arial", Font.PLAIN, 9));
 		btnNewButton_5.setBorder(null);
 		btnNewButton_5.setBackground(new Color(30, 144, 255));
@@ -116,30 +153,65 @@ public class withdraw extends JFrame {
 		panel_3.setBounds(296, 145, 746, 366);
 		contentPane.add(panel_3);
 		
-		JButton btnNewButton_4 = new JButton("back");
-		btnNewButton_4.setForeground(Color.WHITE);
-		btnNewButton_4.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnNewButton_4.setBackground(new Color(0, 0, 128));
-		btnNewButton_4.setBounds(611, 280, 104, 33);
-		panel_3.add(btnNewButton_4);
+		JButton backbtn = new JButton("back");
+		backbtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				homepagezee dashboard = new homepagezee();
+				dashboard.setVisible(true);
+			}
+		});
+		backbtn.setForeground(Color.WHITE);
+		backbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		backbtn.setBackground(new Color(0, 0, 128));
+		backbtn.setBounds(611, 280, 104, 33);
+		panel_3.add(backbtn);
 		
 		JLabel lab2 = new JLabel("Enter Your Amount :");
 		lab2.setBounds(37, 90, 213, 31);
 		panel_3.add(lab2);
 		lab2.setFont(new Font("Arial", Font.BOLD, 20));
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(260, 90, 213, 31);
-		panel_3.add(textField);
+		withdrawfi = new JTextField();
+		withdrawfi.setColumns(10);
+		withdrawfi.setBounds(260, 90, 213, 31);
+		panel_3.add(withdrawfi);
 		
-		JButton buuuuttttt = new JButton("Withdraw");
-		buuuuttttt.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		buuuuttttt.setForeground(new Color(255, 255, 255));
-		buuuuttttt.setBackground(new Color(0, 0, 128));
-		buuuuttttt.setBounds(287, 155, 170, 31);
-		panel_3.add(buuuuttttt);
-		buuuuttttt.setFont(new Font("Arial", Font.BOLD, 18));
+		JButton withdrawamt = new JButton("Withdraw");
+		withdrawamt.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				withdrawamtfi = withdrawfi.getText();
+				num = Long.parseLong(withdrawamtfi);
+				Connection con = null;
+				try {
+					con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/UserDetails", "root", "\"NewPassword@2018\"");
+					if(con!=null) {
+						System.out.println("Connected");
+						PreparedStatement rst = con.prepareStatement("select * from accountholder where accountnumber="+accountField);
+						rst1 = rst.executeQuery();
+						while(rst1.next()) {
+							currentamt = rst1.getString(6);
+							System.out.println(currentamt);
+							num2 = Long.parseLong(currentamt);
+							System.out.println(num2);
+						}
+						PreparedStatement st = con.prepareStatement("update accountholder set currentbalance=? where accountnumber="+accountField);
+						finalbalance = String.valueOf(num2-num);
+						st.setString(1, finalbalance);
+						st.execute();
+					}
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		withdrawamt.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		withdrawamt.setForeground(new Color(255, 255, 255));
+		withdrawamt.setBackground(new Color(0, 0, 128));
+		withdrawamt.setBounds(287, 155, 170, 31);
+		panel_3.add(withdrawamt);
+		withdrawamt.setFont(new Font("Arial", Font.BOLD, 18));
 		
 		text = new JTextField();
 		text.setBorder(null);
@@ -161,37 +233,41 @@ public class withdraw extends JFrame {
 		contentPane.add(text_2);
 		text_2.setColumns(10);
 		
-		JLabel Label_3 = new JLabel("89283983748925656784");
-		Label_3.setOpaque(true);
-		Label_3.setForeground(new Color(0, 0, 0));
-		Label_3.setBackground(Color.WHITE);
-		Label_3.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		Label_3.setBounds(10, 236, 207, 32);
-		contentPane.add(Label_3);
+		JLabel accountfi = new JLabel(accountField);
+		accountfi.setOpaque(true);
+		accountfi.setForeground(new Color(0, 0, 0));
+		accountfi.setBackground(Color.WHITE);
+		accountfi.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		accountfi.setBounds(10, 236, 207, 32);
+		contentPane.add(accountfi);
 		
-		JLabel label_2 = new JLabel("Zeenat_Siddique");
-		label_2.setOpaque(true);
-		label_2.setForeground(new Color(0, 0, 0));
-		label_2.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		label_2.setBackground(new Color(255, 255, 255));
-		label_2.setBounds(10, 145, 207, 31);
-		contentPane.add(label_2);
+		JLabel namefi = new JLabel(nameField);
+		namefi.setOpaque(true);
+		namefi.setForeground(new Color(0, 0, 0));
+		namefi.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		namefi.setBackground(new Color(255, 255, 255));
+		namefi.setBounds(10, 145, 207, 31);
+		contentPane.add(namefi);
 		
-		JLabel label_1 = new JLabel("work.zeenat@gmail.com");
-		label_1.setOpaque(true);
-		label_1.setForeground(Color.BLACK);
-		label_1.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		label_1.setBackground(new Color(255, 255, 255));
-		label_1.setBounds(10, 335, 207, 31);
-		contentPane.add(label_1);
+		JLabel emailfi = new JLabel(emailField);
+		emailfi.setOpaque(true);
+		emailfi.setForeground(Color.BLACK);
+		emailfi.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		emailfi.setBackground(new Color(255, 255, 255));
+		emailfi.setBounds(10, 335, 207, 31);
+		contentPane.add(emailfi);
 		
-		JButton button = new JButton("Welcome, Zeenat Taj Siddique");
-		button.setBorder(null);
-		button.setForeground(new Color(0, 0, 128));
-		button.setBackground(new Color(255, 255, 255));
-		button.setHorizontalAlignment(SwingConstants.RIGHT);
-		button.setBounds(759, 0, 310, 31);
-		contentPane.add(button);
+		JButton toptab = new JButton("Welcome, "+nameField);
+		toptab.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		toptab.setBorder(null);
+		toptab.setForeground(new Color(0, 0, 128));
+		toptab.setBackground(new Color(255, 255, 255));
+		toptab.setHorizontalAlignment(SwingConstants.RIGHT);
+		toptab.setBounds(759, 0, 310, 31);
+		contentPane.add(toptab);
 		
 		
 		JPanel panel_2 = new JPanel();
@@ -200,12 +276,21 @@ public class withdraw extends JFrame {
 		panel_2.setBounds(0, 87, 232, 481);
 		contentPane.add(panel_2);
 		
-		JButton button_2 = new JButton("logout");
-		button_2.setBounds(1016, 30, 55, 24);
-		contentPane.add(button_2);
-		button_2.setForeground(new Color(255, 255, 255));
-		button_2.setBackground(new Color(0, 0, 128));
-		button_2.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		JButton logoutbtn = new JButton("logout");
+		logoutbtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				loginzee loginScreen = new loginzee();
+				loginScreen.setVisible(true);
+				JFrame f=new JFrame();  
+			    JOptionPane.showMessageDialog(f,"Logged Out Successfully"); 
+			}
+		});
+		logoutbtn.setBounds(1016, 30, 55, 24);
+		contentPane.add(logoutbtn);
+		logoutbtn.setForeground(new Color(255, 255, 255));
+		logoutbtn.setBackground(new Color(0, 0, 128));
+		logoutbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		
 		JLabel logo = new JLabel("");
 		logo.setIcon(new ImageIcon("C:\\Users\\Administrator\\Desktop\\BankingSystem\\images\\small logo2.png"));
