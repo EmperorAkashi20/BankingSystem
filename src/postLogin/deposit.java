@@ -179,6 +179,13 @@ public class deposit extends JFrame {
 		contentPane.add(panel_3);
 		
 		JButton btnNewButton_4 = new JButton("back");
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				homepagezee dashboard = new homepagezee();
+				dashboard.setVisible(true);
+			}
+		});
 		btnNewButton_4.setForeground(new Color(0, 0, 0));
 		btnNewButton_4.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnNewButton_4.setBackground(new Color(0, 0, 128));

@@ -113,6 +113,9 @@ public class availablebalance extends JFrame {
 		JButton backbtn = new JButton("back");
 		backbtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				dispose();
+				homepagezee dashboard = new homepagezee();
+				dashboard.setVisible(true);
 			}
 		});
 		backbtn.setForeground(new Color(0, 0, 0));

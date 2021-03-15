@@ -88,11 +88,6 @@ public class homepagezee extends JFrame {
 			}
 		});
 		
-		JLabel lblNewLabel_2_1_2 = new JLabel("");
-		lblNewLabel_2_1_2.setIcon(new ImageIcon(homepagezee.class.getResource("/images/pnghut_brand-web-crawler-logo-service-purple-compare-icon.png")));
-		lblNewLabel_2_1_2.setBounds(606, 368, 121, 105);
-		contentPane.add(lblNewLabel_2_1_2);
-		
 		JLabel mobfi = new JLabel(phoneField);
 		mobfi.setOpaque(true);
 		mobfi.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
@@ -120,11 +115,6 @@ public class homepagezee extends JFrame {
 		emailfi.setBackground(new Color(255, 255, 255));
 		emailfi.setBounds(10, 335, 207, 31);
 		contentPane.add(emailfi);
-		
-		JLabel lblNewLabel_2_1_1 = new JLabel("");
-		lblNewLabel_2_1_1.setIcon(new ImageIcon(homepagezee.class.getResource("/images/u.png")));
-		lblNewLabel_2_1_1.setBounds(884, 368, 117, 105);
-		contentPane.add(lblNewLabel_2_1_1);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("");
 		lblNewLabel_2_1.setIcon(new ImageIcon(homepagezee.class.getResource("/images/UPL.png")));
@@ -194,33 +184,6 @@ public class homepagezee extends JFrame {
 		lblNewLabel_4.setIcon(new ImageIcon(homepagezee.class.getResource("/images/t.png")));
 		lblNewLabel_4.setBounds(890, 125, 129, 105);
 		contentPane.add(lblNewLabel_4);
-		
-		JButton settingbtn = new JButton("SETTINGS");
-		settingbtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				settings settingsPage = new settings();
-				settingsPage.setVisible(true);
-			}
-		});
-		settingbtn.setForeground(new Color(0, 0, 128));
-		settingbtn.setFont(new Font("Arial", Font.BOLD, 10));
-		settingbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		settingbtn.setBackground(new Color(0, 102, 255));
-		settingbtn.setBounds(871, 484, 162, 27);
-		contentPane.add(settingbtn);
-		
-		JButton otherservicesbtn = new JButton("OTHER SERVICES");
-		otherservicesbtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		otherservicesbtn.setForeground(new Color(0, 0, 128));
-		otherservicesbtn.setFont(new Font("Arial", Font.BOLD, 10));
-		otherservicesbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		otherservicesbtn.setBackground(new Color(0, 102, 255));
-		otherservicesbtn.setBounds(596, 484, 162, 27);
-		contentPane.add(otherservicesbtn);
 		
 		JButton checkbalbtn = new JButton("CHECK BALANCE");
 		checkbalbtn.addActionListener(new ActionListener() {
@@ -330,17 +293,32 @@ public class homepagezee extends JFrame {
 		panel_3_3.setBounds(306, 359, 200, 167);
 		contentPane.add(panel_3_3);
 		
-		JPanel panel_3_4 = new JPanel();
-		panel_3_4.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		panel_3_4.setBackground(new Color(255, 255, 255));
-		panel_3_4.setBounds(575, 359, 200, 167);
-		contentPane.add(panel_3_4);
-		
 		JPanel panel_3_5 = new JPanel();
 		panel_3_5.setBackground(new Color(255, 255, 255));
 		panel_3_5.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		panel_3_5.setBounds(848, 359, 200, 167);
+		panel_3_5.setBounds(575, 359, 200, 167);
 		contentPane.add(panel_3_5);
+		panel_3_5.setLayout(null);
+		
+		JLabel lblNewLabel_2_1_1 = new JLabel("");
+		lblNewLabel_2_1_1.setBounds(41, 6, 117, 105);
+		panel_3_5.add(lblNewLabel_2_1_1);
+		lblNewLabel_2_1_1.setIcon(new ImageIcon(homepagezee.class.getResource("/images/u.png")));
+		
+		JButton settingbtn = new JButton("SETTINGS");
+		settingbtn.setBounds(16, 123, 162, 27);
+		panel_3_5.add(settingbtn);
+		settingbtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				settings settingsPage = new settings();
+				settingsPage.setVisible(true);
+			}
+		});
+		settingbtn.setForeground(new Color(0, 0, 128));
+		settingbtn.setFont(new Font("Arial", Font.BOLD, 10));
+		settingbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		settingbtn.setBackground(new Color(0, 102, 255));
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
 		lblNewLabel_2.setIcon(new ImageIcon(homepagezee.class.getResource("/images/deposit (1).png")));

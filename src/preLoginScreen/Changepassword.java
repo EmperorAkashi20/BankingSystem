@@ -205,6 +205,13 @@ public class Changepassword extends JFrame {
 		contentPane.add(lblNewLabel_2_1);
 		
 		JButton btnNewButton_5_1 = new JButton("SETTINGS");
+		btnNewButton_5_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				settings settingsPage = new settings();
+				settingsPage.setVisible(true);
+			}
+		});
 		btnNewButton_5_1.setFont(new Font("Arial", Font.PLAIN, 9));
 		btnNewButton_5_1.setBorder(null);
 		btnNewButton_5_1.setBackground(new Color(30, 144, 255));
@@ -253,6 +260,13 @@ public class Changepassword extends JFrame {
 		contentPane.add(panel_3);
 		
 		JButton backbtn = new JButton("back");
+		backbtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				settings settingsPage = new settings();
+				settingsPage.setVisible(true);
+			}
+		});
 		backbtn.setForeground(new Color(0, 0, 128));
 		backbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		backbtn.setBackground(new Color(0, 0, 128));

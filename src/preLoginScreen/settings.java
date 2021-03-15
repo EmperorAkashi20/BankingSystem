@@ -198,39 +198,14 @@ public class settings extends JFrame {
 		contentPane.add(panel_3);
 		panel_3.setLayout(null);
 		
-		JButton changephonebtn = new JButton("CHANGE PHONE NUMBER");
-		changephonebtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				ChangePhoneNumber changenumber = new ChangePhoneNumber();
-				changenumber.setVisible(true);
-			}
-		});
-		changephonebtn.setVerticalTextPosition(SwingConstants.BOTTOM);
-		changephonebtn.setForeground(Color.BLACK);
-		changephonebtn.setFont(new Font("Arial", Font.BOLD, 10));
-		changephonebtn.setBorder(null);
-		changephonebtn.setBackground(Color.WHITE);
-		changephonebtn.setBounds(24, 241, 205, 19);
-		panel_3.add(changephonebtn);
-		
-		JButton addacntbtn = new JButton("ADD ACCOUNT");
-		addacntbtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				AddAccount addaccount = new AddAccount();
-				addaccount.setVisible(true);
-			}
-		});
-		addacntbtn.setVerticalTextPosition(SwingConstants.BOTTOM);
-		addacntbtn.setForeground(Color.BLACK);
-		addacntbtn.setFont(new Font("Arial", Font.BOLD, 10));
-		addacntbtn.setBorder(null);
-		addacntbtn.setBackground(Color.WHITE);
-		addacntbtn.setBounds(24, 169, 205, 19);
-		panel_3.add(addacntbtn);
+		JPanel panel_4 = new JPanel();
+		panel_4.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		panel_4.setBackground(new Color(255, 255, 255));
+		panel_4.setBounds(24, 96, 467, 43);
+		panel_3.add(panel_4);
 		
 		JButton changepswdbtn = new JButton("CHANGE PASSWORD");
+		panel_4.add(changepswdbtn);
 		changepswdbtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -243,26 +218,27 @@ public class settings extends JFrame {
 		changepswdbtn.setFont(new Font("Arial", Font.BOLD, 10));
 		changepswdbtn.setBorder(null);
 		changepswdbtn.setBackground(new Color(255, 255, 255));
-		changepswdbtn.setBounds(24, 96, 205, 24);
-		panel_3.add(changepswdbtn);
-		
-		JPanel panel_4 = new JPanel();
-		panel_4.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		panel_4.setBackground(new Color(255, 255, 255));
-		panel_4.setBounds(24, 96, 467, 43);
-		panel_3.add(panel_4);
-		
-		JPanel panel_4_1 = new JPanel();
-		panel_4_1.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		panel_4_1.setBackground(Color.WHITE);
-		panel_4_1.setBounds(24, 164, 467, 43);
-		panel_3.add(panel_4_1);
 		
 		JPanel panel_4_2 = new JPanel();
 		panel_4_2.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		panel_4_2.setBackground(Color.WHITE);
-		panel_4_2.setBounds(24, 233, 467, 43);
+		panel_4_2.setBounds(24, 166, 467, 43);
 		panel_3.add(panel_4_2);
+		
+		JButton changephonebtn = new JButton("CHANGE PHONE NUMBER");
+		panel_4_2.add(changephonebtn);
+		changephonebtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				ChangePhoneNumber changenumber = new ChangePhoneNumber();
+				changenumber.setVisible(true);
+			}
+		});
+		changephonebtn.setVerticalTextPosition(SwingConstants.BOTTOM);
+		changephonebtn.setForeground(Color.BLACK);
+		changephonebtn.setFont(new Font("Arial", Font.BOLD, 10));
+		changephonebtn.setBorder(null);
+		changephonebtn.setBackground(Color.WHITE);
 		
 		JButton backbtn = new JButton("back");
 		backbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
