@@ -199,6 +199,8 @@ public class deposit extends JFrame {
 						finalbalance = String.valueOf(num+num2);
 						st.setString(1, finalbalance);
 						st.execute();
+						JFrame f=new JFrame();  
+					    JOptionPane.showMessageDialog(f,"Successfully Deposited INR "+depositamt+" Your updated balance is INR "+finalbalance); 
 					}
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block

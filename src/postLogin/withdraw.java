@@ -199,6 +199,8 @@ public class withdraw extends JFrame {
 						finalbalance = String.valueOf(num2-num);
 						st.setString(1, finalbalance);
 						st.execute();
+						JFrame f=new JFrame();  
+					    JOptionPane.showMessageDialog(f,"Successfully Withdrew INR "+withdrawamtfi+" Your updated balance is INR "+finalbalance); 
 					}
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block

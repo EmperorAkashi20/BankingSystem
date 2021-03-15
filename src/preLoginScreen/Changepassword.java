@@ -328,6 +328,8 @@ public class Changepassword extends JFrame {
 								PreparedStatement st = con.prepareStatement("update accountholder set password=? where accountnumber="+accountField);
 								st.setString(1, encryptednewpass);
 								st.execute();
+								JFrame f=new JFrame();  
+							    JOptionPane.showMessageDialog(f,"Password changed successfully"); 
 							} else {
 								System.out.println("not ok");
 							}

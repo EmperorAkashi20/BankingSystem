@@ -178,6 +178,7 @@ public class createaccountzee extends JFrame {
 								st.setString(6, currentbal);
 								st.execute();
 								System.out.println("INSERTED");
+								dispose();
 								loginzee loginScreen = new loginzee();
 								loginScreen.setVisible(true);
 								JFrame f=new JFrame();  
