@@ -215,7 +215,7 @@ public class withdraw extends JFrame {
 						dtf.format(withdrawdate);
 					    tr.setString(1, transactionidw);
 					    tr.setString(2, accountField);
-					    tr.setString(3, "Withdraw");
+					    tr.setString(3, "DEBIT");
 					    tr.setString(4, dtf.format(withdrawdate));
 					    tr.setString(5, withdrawamtfi);
 					    tr.execute();

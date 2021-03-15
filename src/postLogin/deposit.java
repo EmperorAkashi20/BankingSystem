@@ -224,7 +224,7 @@ public class deposit extends JFrame {
 						depositdate = LocalDateTime.now();  		
 					    tr.setString(1, transactionidd);
 					    tr.setString(2, accountField);
-					    tr.setString(3, "Deposit");
+					    tr.setString(3, "CREDIT");
 					    tr.setString(4, dtf.format(depositdate));
 					    tr.setString(5, depositamt);		    
 					    tr.execute();
