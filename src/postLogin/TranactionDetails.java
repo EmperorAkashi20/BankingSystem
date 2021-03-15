@@ -338,7 +338,7 @@ public class TranactionDetails extends JFrame {
 				model.addColumn("Transaction Type");
 				model.addColumn("Transaction Date");
 				model.addColumn("Transaction Amount");
-				String qr = "SELECT * from transactiondetails where typeoftransaction = \"Deposit\" and accountnumber=? order by dateoftransaction";
+				String qr = "SELECT * from transactiondetails where typeoftransaction = \"CREDIT\" and accountnumber=? order by dateoftransaction";
 				PreparedStatement st = con.prepareStatement(qr);
 				st.setString(1, accountField);
 				ResultSet rs = st.executeQuery();
@@ -374,7 +374,7 @@ public class TranactionDetails extends JFrame {
 				model.addColumn("Transaction Type");
 				model.addColumn("Transaction Date");
 				model.addColumn("Transaction Amount");
-				String qr = "SELECT * from transactiondetails where typeoftransaction = \"Withdraw\" and accountnumber=? order by dateoftransaction";
+				String qr = "SELECT * from transactiondetails where typeoftransaction = \"DEBIT\" and accountnumber=? order by dateoftransaction";
 				PreparedStatement st = con.prepareStatement(qr);
 				st.setString(1, accountField);
 				ResultSet rs = st.executeQuery();
