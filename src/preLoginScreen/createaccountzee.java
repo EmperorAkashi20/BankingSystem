@@ -138,6 +138,7 @@ public class createaccountzee extends JFrame {
 				String email = textField_2.getText();
 				String pswd = passwordField.getText().toString();
 				String confpswd = passwordField_1.getText().toString();
+				String currentbal = "0";
 					try {
 						encryptedpswd = toHexString(getSHA(pswd));
 					} catch (NoSuchAlgorithmException e1) {
@@ -160,7 +161,7 @@ public class createaccountzee extends JFrame {
 								long drand = (long)((rand.nextDouble()*10000000000L));
 								String accountNumber = Long.toString(drand);
 								System.out.println(drand);
-								String sqli = "insert into accountHolder(accountnumber, name, phonenumber, email, password)" + "VALUES(?,?,?,?,?)";
+								String sqli = "insert into accountHolder(accountnumber, name, phonenumber, email, password, currentbalance)" + "VALUES(?,?,?,?,?,?)";
 								PreparedStatement st = con.prepareStatement(sqli);
 								ResultSet rs = st.executeQuery("Show tables");
 							      System.out.println("Tables in the current database: ");
@@ -174,6 +175,7 @@ public class createaccountzee extends JFrame {
 								st.setString(3, phone);
 								st.setString(4, email);
 								st.setString(5, encryptedpswd);
+								st.setString(6, currentbal);
 								st.execute();
 								System.out.println("INSERTED");
 								loginzee loginScreen = new loginzee();
