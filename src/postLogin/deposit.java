@@ -25,6 +25,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Random;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.JRadioButton;
@@ -65,6 +69,10 @@ public class deposit extends JFrame {
 	public static ResultSet rst1;
 	public static long num,num2;
 	public static String finalbalance;
+	public static String transactionidd;
+	public static LocalDateTime depositdate;
+
+	
 
 	/**
 	 * Create the frame.
@@ -201,6 +209,19 @@ public class deposit extends JFrame {
 						st.execute();
 						JFrame f=new JFrame();  
 					    JOptionPane.showMessageDialog(f,"Successfully Deposited INR "+depositamt+" Your updated balance is INR "+finalbalance); 
+					    PreparedStatement tr = con.prepareStatement("insert into transactiondetails(transactionid, accountnumber, typeoftransaction, dateoftransaction, transactionamount)"+"VALUES(?,?,?,?,?)");
+					    Random rand = new Random();
+						long drand = (long)((rand.nextDouble()*10000000000000L));
+						transactionidd = Long.toString(drand);
+						DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");  	
+						depositdate = LocalDateTime.now();  		
+					    tr.setString(1, transactionidd);
+					    tr.setString(2, accountField);
+					    tr.setString(3, "Deposit");
+					    tr.setString(4, dtf.format(depositdate));
+					    tr.setString(5, depositamt);		    
+					    tr.execute();
+					    System.out.println(tr);	    
 					}
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block

@@ -25,6 +25,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Random;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 
@@ -64,6 +67,8 @@ public class withdraw extends JFrame {
 	public static ResultSet rst1;
 	public static long num,num2;
 	public static String finalbalance;
+	public static String transactionidw;
+	public static LocalDateTime withdrawdate;
 
 	/**
 	 * Create the frame.
@@ -200,7 +205,21 @@ public class withdraw extends JFrame {
 						st.setString(1, finalbalance);
 						st.execute();
 						JFrame f=new JFrame();  
-					    JOptionPane.showMessageDialog(f,"Successfully Withdrew INR "+withdrawamtfi+" Your updated balance is INR "+finalbalance); 
+					    JOptionPane.showMessageDialog(f,"Successfully Withdrew INR "+withdrawamtfi+" Your updated balance is INR "+finalbalance);
+					    PreparedStatement tr = con.prepareStatement("insert into transactiondetails(transactionid, accountnumber, typeoftransaction, dateoftransaction, transactionamount)"+"VALUES(?,?,?,?,?)");
+					    Random rand = new Random();
+						long drand = (long)((rand.nextDouble()*10000000000000L));
+						transactionidw = Long.toString(drand);
+						DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");  
+						withdrawdate = LocalDateTime.now();  
+						dtf.format(withdrawdate);
+					    tr.setString(1, transactionidw);
+					    tr.setString(2, accountField);
+					    tr.setString(3, "Withdraw");
+					    tr.setString(4, dtf.format(withdrawdate));
+					    tr.setString(5, withdrawamtfi);
+					    tr.execute();
+					    System.out.println(tr);
 					}
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block

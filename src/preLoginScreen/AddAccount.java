@@ -17,6 +17,7 @@ import javax.swing.JPasswordField;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.ImageIcon;
 
+@SuppressWarnings("serial")
 public class AddAccount extends JFrame {
 
 	private JPanel contentPane;
@@ -42,6 +43,11 @@ public class AddAccount extends JFrame {
 			}
 		});
 	}
+	
+	String nameField=loginzee.name;
+	String emailField=loginzee.email;
+	String phoneField=loginzee.phone;
+	String accountField=loginzee.account;
 
 	/**
 	 * Create the frame.
@@ -98,21 +104,21 @@ public class AddAccount extends JFrame {
 		textField_3.setBounds(10, 100, 209, 31);
 		contentPane.add(textField_3);
 		
-		JLabel lblNewLabel_5_1 = new JLabel("Zeenat_Siddique");
+		JLabel lblNewLabel_5_1 = new JLabel(nameField);
 		lblNewLabel_5_1.setOpaque(true);
 		lblNewLabel_5_1.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		lblNewLabel_5_1.setBackground(Color.WHITE);
 		lblNewLabel_5_1.setBounds(10, 138, 209, 31);
 		contentPane.add(lblNewLabel_5_1);
 		
-		JLabel lblNewLabel_5_1_1 = new JLabel("892839837489253656784");
+		JLabel lblNewLabel_5_1_1 = new JLabel(accountField);
 		lblNewLabel_5_1_1.setOpaque(true);
 		lblNewLabel_5_1_1.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		lblNewLabel_5_1_1.setBackground(Color.WHITE);
 		lblNewLabel_5_1_1.setBounds(10, 229, 209, 31);
 		contentPane.add(lblNewLabel_5_1_1);
 		
-		JLabel lblNewLabel_5_1_2 = new JLabel("09330946879");
+		JLabel lblNewLabel_5_1_2 = new JLabel(phoneField);
 		lblNewLabel_5_1_2.setOpaque(true);
 		lblNewLabel_5_1_2.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		lblNewLabel_5_1_2.setBackground(Color.WHITE);
@@ -151,7 +157,7 @@ public class AddAccount extends JFrame {
 		button_2.setBounds(1007, 29, 53, 23);
 		contentPane.add(button_2);
 		
-		JButton button = new JButton("Welcome, Zeenat Taj Siddique");
+		JButton button = new JButton("Welcome, "+nameField);
 		button.setHorizontalAlignment(SwingConstants.RIGHT);
 		button.setForeground(new Color(0, 0, 128));
 		button.setBorder(null);
@@ -222,7 +228,7 @@ public class AddAccount extends JFrame {
 		panel_1.setBounds(0, 58, 1079, 31);
 		contentPane.add(panel_1);
 		
-		JLabel lblNewLabel_5 = new JLabel("work.zeenat@gmail.com");
+		JLabel lblNewLabel_5 = new JLabel(emailField);
 		lblNewLabel_5.setOpaque(true);
 		lblNewLabel_5.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		lblNewLabel_5.setBackground(Color.WHITE);

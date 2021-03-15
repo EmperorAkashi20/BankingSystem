@@ -66,6 +66,7 @@ public class Changepassword extends JFrame {
 	
 	public static String oldPass;
 	public static String newPass;
+	public static String confPass;
 	public static String encryptedpass;
 	public static String encryptednewpass;
 	public static String currentpass;
@@ -313,6 +314,13 @@ public class Changepassword extends JFrame {
 					// TODO Auto-generated catch block
 					e2.printStackTrace();
 				}
+				confPass=passwordField_2.getText().toString();
+				if(oldPass.isEmpty() || newPass.isEmpty() || confPass.isEmpty()) {
+					JFrame f=new JFrame();  
+				    JOptionPane.showMessageDialog(f,"No Fields can be empty");
+				}	
+				else {
+					if(confPass != newPass) {
 				Connection con = null;
 				try {
 					con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/UserDetails", "root", "\"NewPassword@2018\"");
@@ -334,12 +342,17 @@ public class Changepassword extends JFrame {
 							} else {
 								System.out.println("not ok");
 							}
-						}
-						
+						}	
 					}
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
+				}
+				}
+				 else {
+					 JFrame f=new JFrame();  
+					    JOptionPane.showMessageDialog(f,"Please check if Password and Confirm Password are the same (Case Sensitive)");
+				}
 				}
 			}
 		});
