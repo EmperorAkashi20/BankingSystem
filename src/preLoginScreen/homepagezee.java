@@ -24,6 +24,7 @@ import java.awt.SystemColor;
 import java.awt.Font;
 import javax.swing.border.SoftBevelBorder;
 
+import postLogin.TranactionDetails;
 import postLogin.availablebalance;
 import postLogin.deposit;
 import postLogin.withdraw;
@@ -239,6 +240,9 @@ public class homepagezee extends JFrame {
 		JButton transactionhistorybtn = new JButton("TRANSACTION \r\nHISTORY");
 		transactionhistorybtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				dispose();
+				TranactionDetails transpage = new TranactionDetails();
+				transpage.setVisible(true);
 			}
 		});
 		transactionhistorybtn.setForeground(new Color(0, 0, 128));
