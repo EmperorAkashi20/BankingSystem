@@ -145,7 +145,7 @@ public class AddAccount extends JFrame {
 		contentPane.add(btnNewButton_5);
 		
 		JButton button_2 = new JButton("logout");
-		button_2.setForeground(Color.WHITE);
+		button_2.setForeground(new Color(0, 0, 128));
 		button_2.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		button_2.setBackground(new Color(0, 0, 128));
 		button_2.setBounds(1007, 29, 53, 23);
@@ -172,7 +172,7 @@ public class AddAccount extends JFrame {
 		contentPane.add(panel_3);
 		
 		JButton btnNewButton_4 = new JButton("back");
-		btnNewButton_4.setForeground(Color.WHITE);
+		btnNewButton_4.setForeground(new Color(0, 0, 0));
 		btnNewButton_4.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnNewButton_4.setBackground(new Color(0, 0, 128));
 		btnNewButton_4.setBounds(611, 280, 104, 33);
@@ -209,10 +209,10 @@ public class AddAccount extends JFrame {
 		JLabel lblNewLabel_1_1_4 = new JLabel("Done");
 		lblNewLabel_1_1_4.setOpaque(true);
 		lblNewLabel_1_1_4.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_1_4.setForeground(Color.WHITE);
+		lblNewLabel_1_1_4.setForeground(new Color(0, 0, 128));
 		lblNewLabel_1_1_4.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		lblNewLabel_1_1_4.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		lblNewLabel_1_1_4.setBackground(new Color(0, 0, 128));
+		lblNewLabel_1_1_4.setBackground(new Color(255, 255, 255));
 		lblNewLabel_1_1_4.setBounds(45, 251, 319, 33);
 		panel_3.add(lblNewLabel_1_1_4);
 		

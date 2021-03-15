@@ -74,7 +74,7 @@ public class homepagezee extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("logout");
-		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setForeground(new Color(0, 0, 128));
 		btnNewButton.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnNewButton.setBackground(new Color(0, 0, 128));
 		btnNewButton.addActionListener(new ActionListener() {
@@ -202,11 +202,11 @@ public class homepagezee extends JFrame {
 				settingsPage.setVisible(true);
 			}
 		});
-		settingbtn.setForeground(Color.WHITE);
+		settingbtn.setForeground(new Color(0, 0, 128));
 		settingbtn.setFont(new Font("Arial", Font.BOLD, 10));
 		settingbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		settingbtn.setBackground(new Color(0, 102, 255));
-		settingbtn.setBounds(890, 484, 121, 27);
+		settingbtn.setBounds(871, 484, 162, 27);
 		contentPane.add(settingbtn);
 		
 		JButton otherservicesbtn = new JButton("OTHER SERVICES");
@@ -214,11 +214,11 @@ public class homepagezee extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		otherservicesbtn.setForeground(Color.WHITE);
+		otherservicesbtn.setForeground(new Color(0, 0, 128));
 		otherservicesbtn.setFont(new Font("Arial", Font.BOLD, 10));
 		otherservicesbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		otherservicesbtn.setBackground(new Color(0, 102, 255));
-		otherservicesbtn.setBounds(606, 484, 121, 27);
+		otherservicesbtn.setBounds(596, 484, 162, 27);
 		contentPane.add(otherservicesbtn);
 		
 		JButton checkbalbtn = new JButton("CHECK BALANCE");
@@ -229,11 +229,11 @@ public class homepagezee extends JFrame {
 				avlbal.setVisible(true);
 			}
 		});
-		checkbalbtn.setForeground(Color.WHITE);
+		checkbalbtn.setForeground(new Color(0, 0, 128));
 		checkbalbtn.setFont(new Font("Arial", Font.BOLD, 10));
 		checkbalbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		checkbalbtn.setBackground(new Color(0, 102, 255));
-		checkbalbtn.setBounds(340, 484, 121, 27);
+		checkbalbtn.setBounds(320, 484, 162, 27);
 		contentPane.add(checkbalbtn);
 		
 		JButton transactionhistorybtn = new JButton("TRANSACTION \r\nHISTORY");
@@ -241,11 +241,11 @@ public class homepagezee extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		transactionhistorybtn.setForeground(Color.WHITE);
+		transactionhistorybtn.setForeground(new Color(0, 0, 128));
 		transactionhistorybtn.setFont(new Font("Arial", Font.BOLD, 10));
 		transactionhistorybtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		transactionhistorybtn.setBackground(new Color(0, 102, 255));
-		transactionhistorybtn.setBounds(871, 241, 162, 27);
+		transactionhistorybtn.setBounds(871, 241, 153, 27);
 		contentPane.add(transactionhistorybtn);
 		
 		JPanel panel_3_2 = new JPanel();
@@ -262,11 +262,11 @@ public class homepagezee extends JFrame {
 				withdrawPage.setVisible(true);
 			}
 		});
-		withdrawbtn.setForeground(Color.WHITE);
+		withdrawbtn.setForeground(new Color(0, 0, 128));
 		withdrawbtn.setFont(new Font("Ariel", Font.BOLD, 10));
 		withdrawbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		withdrawbtn.setBackground(new Color(0, 102, 255));
-		withdrawbtn.setBounds(606, 241, 121, 27);
+		withdrawbtn.setBounds(596, 241, 162, 27);
 		contentPane.add(withdrawbtn);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
@@ -283,10 +283,10 @@ public class homepagezee extends JFrame {
 			}
 		});
 		depositbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		depositbtn.setForeground(new Color(255, 255, 255));
+		depositbtn.setForeground(new Color(0, 0, 128));
 		depositbtn.setBackground(new Color(0, 102, 255));
 		depositbtn.setFont(new Font("Ariel", Font.BOLD, 10));
-		depositbtn.setBounds(340, 241, 121, 27);
+		depositbtn.setBounds(320, 241, 162, 27);
 		contentPane.add(depositbtn);
 		btnNewButton.setBounds(1015, 31, 54, 19);
 		contentPane.add(btnNewButton);

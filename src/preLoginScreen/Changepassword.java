@@ -225,7 +225,7 @@ public class Changepassword extends JFrame {
 			    JOptionPane.showMessageDialog(f,"Logged Out Successfully");
 			}
 		});
-		logoutbtn.setForeground(Color.WHITE);
+		logoutbtn.setForeground(new Color(0, 0, 128));
 		logoutbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		logoutbtn.setBackground(new Color(0, 0, 128));
 		logoutbtn.setBounds(1007, 29, 53, 18);
@@ -252,7 +252,7 @@ public class Changepassword extends JFrame {
 		contentPane.add(panel_3);
 		
 		JButton backbtn = new JButton("back");
-		backbtn.setForeground(Color.WHITE);
+		backbtn.setForeground(new Color(0, 0, 128));
 		backbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		backbtn.setBackground(new Color(0, 0, 128));
 		backbtn.setBounds(611, 280, 104, 33);
@@ -296,6 +296,7 @@ public class Changepassword extends JFrame {
 		panel_3.add(lblNewLabel_1_1_3);
 		
 		JButton changepassbtn = new JButton("Confirm Change");
+		changepassbtn.setForeground(new Color(0, 0, 128));
 		changepassbtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				oldPass = passwordField.getText().toString();

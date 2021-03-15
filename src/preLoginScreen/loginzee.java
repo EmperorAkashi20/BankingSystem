@@ -103,13 +103,6 @@ public class loginzee extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnForgotPassword.setHorizontalAlignment(SwingConstants.RIGHT);
-		btnForgotPassword.setForeground(new Color(0, 0, 128));
-		btnForgotPassword.setFont(new Font("Arial", Font.BOLD, 10));
-		btnForgotPassword.setBorder(null);
-		btnForgotPassword.setBackground(new Color(255, 255, 255));
-		btnForgotPassword.setBounds(222, 383, 171, 28);
-		contentPane.add(btnForgotPassword);
 		
 		JButton btnCreateAccount = new JButton("CREATE ACCOUNT");
 		btnCreateAccount.addActionListener(new ActionListener() {
@@ -119,15 +112,22 @@ public class loginzee extends JFrame {
 				createAccountPage.setVisible(true);
 			}
 		});
-		btnCreateAccount.setForeground(Color.WHITE);
+		btnCreateAccount.setForeground(Color.BLACK);
 		btnCreateAccount.setFont(new Font("Arial", Font.BOLD, 10));
 		btnCreateAccount.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnCreateAccount.setBackground(new Color(0, 0, 128));
 		btnCreateAccount.setBounds(241, 444, 138, 28);
 		contentPane.add(btnCreateAccount);
+		btnForgotPassword.setHorizontalAlignment(SwingConstants.RIGHT);
+		btnForgotPassword.setForeground(new Color(0, 0, 128));
+		btnForgotPassword.setFont(new Font("Arial", Font.BOLD, 10));
+		btnForgotPassword.setBorder(null);
+		btnForgotPassword.setBackground(new Color(255, 255, 255));
+		btnForgotPassword.setBounds(222, 383, 171, 28);
+		contentPane.add(btnForgotPassword);
 		
 		JLabel lblNewLabel_1_1_2 = new JLabel("Dont Have An Account?");
-		lblNewLabel_1_1_2.setBounds(106, 444, 138, 28);
+		lblNewLabel_1_1_2.setBounds(89, 444, 155, 28);
 		contentPane.add(lblNewLabel_1_1_2);
 		
 		passwordField = new JPasswordField();
@@ -190,7 +190,7 @@ public class loginzee extends JFrame {
 				}
 			}
 		});
-		buuuuttttt.setForeground(Color.WHITE);
+		buuuuttttt.setForeground(new Color(0, 0, 0));
 		buuuuttttt.setFont(new Font("Arial", Font.BOLD, 18));
 		buuuuttttt.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		buuuuttttt.setBackground(new Color(0, 0, 128));
@@ -229,6 +229,7 @@ public class loginzee extends JFrame {
 		contentPane.add(panel);
 		
 		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBackground(new Color(0, 0, 128));
 		lblNewLabel.setIcon(new ImageIcon(loginzee.class.getResource("/images/3967030.jpg")));
 		lblNewLabel.setBounds(0, 0, 1079, 563);
 		contentPane.add(lblNewLabel);

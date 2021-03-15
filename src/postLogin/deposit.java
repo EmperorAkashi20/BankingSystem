@@ -171,7 +171,7 @@ public class deposit extends JFrame {
 		contentPane.add(panel_3);
 		
 		JButton btnNewButton_4 = new JButton("back");
-		btnNewButton_4.setForeground(Color.WHITE);
+		btnNewButton_4.setForeground(new Color(0, 0, 0));
 		btnNewButton_4.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnNewButton_4.setBackground(new Color(0, 0, 128));
 		btnNewButton_4.setBounds(611, 280, 104, 33);
@@ -210,7 +210,7 @@ public class deposit extends JFrame {
 		});
 		btnDone.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnDone.setBackground(new Color(0, 0, 128));
-		btnDone.setForeground(new Color(255, 255, 255));
+		btnDone.setForeground(new Color(0, 0, 128));
 		btnDone.setFont(new Font("Arial", Font.BOLD, 18));
 		btnDone.setBounds(292, 218, 170, 31);
 		panel_3.add(btnDone);
@@ -325,7 +325,7 @@ public class deposit extends JFrame {
 		});
 		button_2.setBounds(1016, 30, 53, 19);
 		contentPane.add(button_2);
-		button_2.setForeground(new Color(255, 255, 255));
+		button_2.setForeground(new Color(0, 0, 128));
 		button_2.setBackground(new Color(0, 0, 128));
 		button_2.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		

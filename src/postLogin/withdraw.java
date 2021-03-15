@@ -161,7 +161,7 @@ public class withdraw extends JFrame {
 				dashboard.setVisible(true);
 			}
 		});
-		backbtn.setForeground(Color.WHITE);
+		backbtn.setForeground(new Color(0, 0, 0));
 		backbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		backbtn.setBackground(new Color(0, 0, 128));
 		backbtn.setBounds(611, 280, 104, 33);
@@ -209,7 +209,7 @@ public class withdraw extends JFrame {
 			}
 		});
 		withdrawamt.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		withdrawamt.setForeground(new Color(255, 255, 255));
+		withdrawamt.setForeground(new Color(0, 0, 128));
 		withdrawamt.setBackground(new Color(0, 0, 128));
 		withdrawamt.setBounds(287, 155, 170, 31);
 		panel_3.add(withdrawamt);
@@ -290,7 +290,7 @@ public class withdraw extends JFrame {
 		});
 		logoutbtn.setBounds(1016, 30, 55, 24);
 		contentPane.add(logoutbtn);
-		logoutbtn.setForeground(new Color(255, 255, 255));
+		logoutbtn.setForeground(new Color(0, 0, 128));
 		logoutbtn.setBackground(new Color(0, 0, 128));
 		logoutbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		

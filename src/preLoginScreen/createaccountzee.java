@@ -192,7 +192,7 @@ public class createaccountzee extends JFrame {
 				}	
 			}
 		});
-		btnCreateAccount.setForeground(Color.WHITE);
+		btnCreateAccount.setForeground(new Color(0, 0, 0));
 		btnCreateAccount.setFont(new Font("Arial", Font.BOLD, 18));
 		btnCreateAccount.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnCreateAccount.setBackground(new Color(0, 0, 128));

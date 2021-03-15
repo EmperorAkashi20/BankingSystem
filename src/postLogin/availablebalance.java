@@ -115,7 +115,7 @@ public class availablebalance extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		backbtn.setForeground(Color.WHITE);
+		backbtn.setForeground(new Color(0, 0, 0));
 		backbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		backbtn.setBackground(new Color(0, 0, 128));
 		backbtn.setBounds(611, 280, 104, 33);
@@ -270,7 +270,7 @@ public class availablebalance extends JFrame {
 		});
 		button_2.setBounds(1017, 28, 54, 19);
 		contentPane.add(button_2);
-		button_2.setForeground(new Color(255, 255, 255));
+		button_2.setForeground(new Color(0, 0, 128));
 		button_2.setBackground(new Color(0, 0, 128));
 		button_2.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		

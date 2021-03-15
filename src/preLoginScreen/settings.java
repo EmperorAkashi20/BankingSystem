@@ -154,7 +154,7 @@ public class settings extends JFrame {
 			    JOptionPane.showMessageDialog(f,"Logged Out Successfully");
 			}
 		});
-		logoutbtn.setForeground(Color.WHITE);
+		logoutbtn.setForeground(new Color(0, 0, 128));
 		logoutbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		logoutbtn.setBackground(new Color(0, 0, 128));
 		logoutbtn.setBounds(1015, 31, 54, 19);
@@ -267,7 +267,7 @@ public class settings extends JFrame {
 		JButton backbtn = new JButton("back");
 		backbtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		backbtn.setBackground(new Color(0, 0, 128));
-		backbtn.setForeground(new Color(255, 255, 255));
+		backbtn.setForeground(new Color(0, 0, 0));
 		backbtn.setBounds(611, 280, 104, 33);
 		panel_3.add(backbtn);
 		
