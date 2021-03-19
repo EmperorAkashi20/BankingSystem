@@ -1,6 +1,6 @@
 package preLoginScreen;
 
-import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -14,8 +14,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.border.BevelBorder;
 import javax.swing.SwingConstants;
-import javax.swing.JPasswordField;
-import javax.swing.border.SoftBevelBorder;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.sql.Connection;

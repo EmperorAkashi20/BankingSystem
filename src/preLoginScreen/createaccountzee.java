@@ -1,6 +1,5 @@
 package preLoginScreen;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -14,7 +13,6 @@ import javax.swing.border.BevelBorder;
 import javax.swing.JTextField;
 import javax.swing.border.SoftBevelBorder;
 
-import postLogin.deposit;
 
 import javax.swing.JButton;
 import java.awt.Font;
@@ -29,7 +27,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.Random;
 import java.awt.event.ActionEvent;
 
@@ -154,7 +151,7 @@ public class createaccountzee extends JFrame {
 						System.out.println("Match");
 						Connection con = null;
 						try {
-							con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/UserDetails", "root", "\"NewPassword@2018\"");
+							con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/userdetails", "root", "\"NewPassword@2018\"");
 							if(con!=null) {
 								System.out.println("Connected");
 								Random rand = new Random();

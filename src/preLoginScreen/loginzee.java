@@ -1,6 +1,5 @@
 	package preLoginScreen;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -150,7 +149,7 @@ public class loginzee extends JFrame {
 				if(account != null && pswd != null) {
 					try {
 						Connection con = null;
-						con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/UserDetails", "root", "\"NewPassword@2018\"");
+						con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/userdetails", "root", "\"NewPassword@2018\"");
 						if(con!=null) {
 							System.out.println("Connected");
 							PreparedStatement st = con.prepareStatement("Select accountnumber, password from accountHolder where accountnumber=? and password=?");

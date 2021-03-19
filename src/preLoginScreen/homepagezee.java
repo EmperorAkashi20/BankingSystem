@@ -1,6 +1,5 @@
 package preLoginScreen;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -14,22 +13,16 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.border.BevelBorder;
 import javax.swing.SwingConstants;
-import javax.swing.JComboBox;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
-import javax.swing.JList;
 import javax.swing.JOptionPane;
 
-import java.awt.SystemColor;
 import java.awt.Font;
-import javax.swing.border.SoftBevelBorder;
 
 import postLogin.TranactionDetails;
 import postLogin.availablebalance;
 import postLogin.deposit;
 import postLogin.withdraw;
 
-import javax.swing.UIManager;
 import java.awt.Toolkit;
 
 public class homepagezee extends JFrame {
