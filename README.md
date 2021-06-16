@@ -14,7 +14,7 @@ This is the beginning of the project
     iii. Withdrawals
 7. Password change
 8. Phone number change**
-9. This is a test line
+
 
 
 **There are alerts where required (e.g. adding/withdrawing amount, log in/ log out etc.)**
